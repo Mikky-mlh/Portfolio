@@ -1,4 +1,3 @@
-/* ===== PROFESSIONAL VARIABLES ===== */
 :root {
     --primary-dark: #0a192f;
     --secondary-dark: #112240;
@@ -17,7 +16,6 @@
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-/* ===== RESET & BASE ===== */
 * {
     margin: 0;
     padding: 0;
@@ -45,7 +43,6 @@ body {
     padding: 0 20px;
 }
 
-/* ===== TYPOGRAPHY ===== */
 h1, h2, h3, h4 {
     color: var(--white);
     font-weight: 600;
@@ -62,7 +59,7 @@ a:hover {
     color: var(--white);
 }
 
-/* ===== NAVIGATION ===== */
+/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -127,7 +124,7 @@ a:hover {
     width: 100%;
 }
 
-/* ===== HERO SECTION ===== */
+/* HERO SECTION */
 .hero {
     padding: 150px 0 100px;
     background: linear-gradient(180deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
@@ -308,7 +305,6 @@ a:hover {
     font-size: 0.85rem;
 }
 
-/* ===== SECTION COMMON ===== */
 .section {
     padding: 100px 0;
 }
@@ -343,7 +339,7 @@ a:hover {
     margin: 1rem auto 0;
 }
 
-/* ===== PROJECTS SECTION ===== */
+/* PROJECTS SECTION */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -446,7 +442,7 @@ a:hover {
     color: var(--white);
 }
 
-/* ===== SKILLS SECTION ===== */
+/* SKILLS SECTION */
 .skills-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -496,7 +492,7 @@ a:hover {
     line-height: 1.6;
 }
 
-/* ===== EXPERIENCE SECTION ===== */
+/* EXPERIENCE SECTION */
 .approach-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -533,7 +529,7 @@ a:hover {
     line-height: 1.7;
 }
 
-/* ===== CONTACT SECTION ===== */
+/* CONTACT SECTION */
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -598,7 +594,6 @@ a:hover {
     margin-top: 1.5rem !important;
 }
 
-/* ===== FOOTER ===== */
 .footer {
     background: var(--secondary-dark);
     border-top: 1px solid rgba(100, 255, 218, 0.1);
@@ -666,7 +661,7 @@ a:hover {
     color: var(--accent-blue);
 }
 
-/* ===== BACK TO TOP ===== */
+/* BACK TO TOP */
 .back-to-top {
     position: fixed;
     bottom: 2rem;
@@ -697,7 +692,6 @@ a:hover {
     box-shadow: var(--shadow-lg);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 992px) {
     .hero-container,
     .contact-content,
