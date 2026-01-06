@@ -16,6 +16,27 @@
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary-dark);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent-blue), #52c4a8);
+    border-radius: 6px;
+    border: 2px solid var(--secondary-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #52c4a8, var(--accent-blue));
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -91,6 +112,7 @@ a:hover {
     gap: 2rem;
 }
 
+
 .nav-link {
     font-family: var(--font-mono);
     font-size: 0.9rem;
@@ -130,11 +152,14 @@ a:hover {
     background: linear-gradient(180deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
 }
 
+
 .hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .badge {
@@ -346,6 +371,25 @@ a:hover {
     gap: 2rem;
 }
 
+.language-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    margin: 2rem 0 1.5rem;
+    color: var(--white);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.language-title i {
+    color: var(--accent-blue);
+}
+
+.language-section {
+    margin-bottom: 3rem;
+}
+
 .project-card {
     background: var(--secondary-dark);
     border: 1px solid rgba(100, 255, 218, 0.1);
@@ -366,12 +410,40 @@ a:hover {
 
 .project-image {
     height: 150px;
-    background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(17, 34, 64, 0.5));
+    background: linear-gradient(135deg, var(--accent-blue), var(--secondary-dark));
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    color: var(--accent-blue);
+    color: var(--primary-dark);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.project-image::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+.project-card:hover .project-image {
+    background: linear-gradient(135deg, #52c4a8, var(--accent-blue));
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(45deg) translateX(-100%);
+    }
+    100% {
+        transform: rotate(45deg) translateX(100%);
+    }
 }
 
 .project-content {
@@ -489,6 +561,96 @@ a:hover {
 .skill-description {
     color: var(--accent-light);
     font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+/* ACHIEVEMENTS SECTION */
+.achievements-section {
+    background: var(--secondary-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.achievements-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(100, 255, 218, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at bottom left, rgba(100, 255, 218, 0.03) 0%, transparent 40%);
+    z-index: 0;
+}
+
+.achievements-section > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.achievement-card {
+    background: rgba(10, 25, 47, 0.7);
+    border: 1px solid rgba(100, 255, 218, 0.15);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent-blue);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-md);
+}
+
+.achievement-card:hover::before {
+    transform: scaleX(1);
+}
+
+.achievement-icon {
+    font-size: 2.5rem;
+    color: var(--accent-blue);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.achievement-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--white);
+}
+
+.achievement-date {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
+}
+
+.achievement-description {
+    color: var(--accent-lighter);
     line-height: 1.6;
 }
 
@@ -661,6 +823,205 @@ a:hover {
     color: var(--accent-blue);
 }
 
+/* CONTACT FORM */
+.contact-form-container {
+    flex: 1;
+    min-width: 300px;
+    background: var(--secondary-dark);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    margin-right: 2rem;
+}
+
+.contact-form h3 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.contact-form p {
+    color: var(--accent-lighter);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 1rem 1rem 2.5rem;
+    background: rgba(10, 25, 47, 0.5);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    border-radius: var(--border-radius);
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.2);
+}
+
+.form-group label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-light);
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label {
+    top: 0;
+    left: 0.5rem;
+    font-size: 0.8rem;
+    background: var(--secondary-dark);
+    padding: 0 0.3rem;
+    color: var(--accent-blue);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    justify-content: center;
+}
+
+/* GITHUB STATS SECTION */
+.github-stats-section {
+    background: var(--secondary-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.github-stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(100, 255, 218, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at bottom left, rgba(100, 255, 218, 0.03) 0%, transparent 40%);
+    z-index: 0;
+}
+
+.github-stats-section > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.github-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: rgba(10, 25, 47, 0.7);
+    border: 1px solid rgba(100, 255, 218, 0.15);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-mono);
+}
+
+.stat-label {
+    color: var(--accent-light);
+    font-size: 0.9rem;
+}
+
+.github-contributions {
+    text-align: center;
+}
+
+.contributions-calendar {
+    display: inline-block;
+    background: rgba(10, 25, 47, 0.7);
+    border: 1px solid rgba(100, 255, 218, 0.15);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.calendar-month {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.calendar-week {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.calendar-day {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    background-color: #ebedf0;
+    transition: var(--transition);
+}
+
+.calendar-day.level-0 {
+    background-color: #ebedf0;
+}
+
+.calendar-day.level-1 {
+    background-color: #9be9a8;
+}
+
+.calendar-day.level-2 {
+    background-color: #40c463;
+}
+
+.calendar-day.level-3 {
+    background-color: #30a14e;
+}
+
+.calendar-day.level-4 {
+    background-color: #216e39;
+}
+
+.calendar-day:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
 /* BACK TO TOP */
 .back-to-top {
     position: fixed;
@@ -675,21 +1036,93 @@ a:hover {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0.7;
     transition: var(--transition);
     z-index: 999;
     box-shadow: var(--shadow-md);
-}
-
-.back-to-top.visible {
-    opacity: 1;
     visibility: visible;
 }
 
 .back-to-top:hover {
+    opacity: 1;
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+}
+
+/* Add focus styles for accessibility */
+a:focus,
+button:focus {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Enhanced hover effects for interactive elements */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-blue);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Enhanced card hover effects */
+.info-card,
+.approach-card,
+.stat-card {
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::before,
+.approach-card::before,
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.info-card:hover::before,
+.approach-card:hover::before,
+.stat-card:hover::before {
+    left: 100%;
+}
+
+.info-card:hover,
+.approach-card:hover,
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-md);
 }
 
 @media (max-width: 992px) {
