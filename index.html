@@ -333,14 +333,32 @@
                         <div class="skills-list">
                             <div class="skill">
                                 <span class="skill-name">Java</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-width="85%">
+                                        <div class="skill-bar-progress" style="width: 85%"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
                                 <div class="skill-description">Object-oriented programming, Collections, Algorithms</div>
                             </div>
                             <div class="skill">
                                 <span class="skill-name">Python</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-width="80%">
+                                        <div class="skill-bar-progress" style="width: 80%"></div>
+                                    </div>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
                                 <div class="skill-description">Game development, Scripting, Problem solving</div>
                             </div>
                             <div class="skill">
                                 <span class="skill-name">C++</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-width="70%">
+                                        <div class="skill-bar-progress" style="width: 70%"></div>
+                                    </div>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
                                 <div class="skill-description">Systems programming, Performance-oriented development</div>
                             </div>
                         </div>
@@ -351,14 +369,32 @@
                         <div class="skills-list">
                             <div class="skill">
                                 <span class="skill-name">HTML5 & CSS3</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-width="90%">
+                                        <div class="skill-bar-progress" style="width: 90%"></div>
+                                    </div>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
                                 <div class="skill-description">Semantic markup, Responsive design, Modern layouts</div>
                             </div>
                             <div class="skill">
                                 <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-width="75%">
+                                        <div class="skill-bar-progress" style="width: 75%"></div>
+                                    </div>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
                                 <div class="skill-description">DOM manipulation, Interactive interfaces</div>
                             </div>
                             <div class="skill">
                                 <span class="skill-name">Git & GitHub</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-width="85%">
+                                        <div class="skill-bar-progress" style="width: 85%"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
                                 <div class="skill-description">Version control, Project management, Collaboration</div>
                             </div>
                         </div>
@@ -369,14 +405,32 @@
                         <div class="skills-list">
                             <div class="skill">
                                 <span class="skill-name">VS Code</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-width="95%">
+                                        <div class="skill-bar-progress" style="width: 95%"></div>
+                                    </div>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
                                 <div class="skill-description">Primary code editor with extensive extensions</div>
                             </div>
                             <div class="skill">
                                 <span class="skill-name">GitHub Pages</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-width="80%">
+                                        <div class="skill-bar-progress" style="width: 80%"></div>
+                                    </div>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
                                 <div class="skill-description">Static site hosting and deployment</div>
                             </div>
                             <div class="skill">
                                 <span class="skill-name">Terminal/CLI</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-width="75%">
+                                        <div class="skill-bar-progress" style="width: 75%"></div>
+                                    </div>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
                                 <div class="skill-description">Command-line interface proficiency</div>
                             </div>
                         </div>
@@ -487,28 +541,28 @@
                 
                 <div class="contact-content">
                     <div class="contact-form-container">
-                        <form action="#" method="POST" class="contact-form">
+                        <form id="contact-form" class="contact-form">
                             <h3>Get In Touch</h3>
                             <p>Have a project in mind or want to discuss opportunities? Send me a message!</p>
 
                             <div class="form-group">
-                                <input type="text" name="name" placeholder="Your Name" required>
-                                <label><i class="fas fa-user"></i></label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                                <label for="name"><i class="fas fa-user"></i></label>
                             </div>
 
                             <div class="form-group">
-                                <input type="email" name="email" placeholder="Your Email" required>
-                                <label><i class="fas fa-envelope"></i></label>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                                <label for="email"><i class="fas fa-envelope"></i></label>
                             </div>
 
                             <div class="form-group">
-                                <input type="text" name="subject" placeholder="Subject" required>
-                                <label><i class="fas fa-tag"></i></label>
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                                <label for="subject"><i class="fas fa-tag"></i></label>
                             </div>
 
                             <div class="form-group">
-                                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                                <label><i class="fas fa-comment"></i></label>
+                                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                                <label for="message"><i class="fas fa-comment"></i></label>
                             </div>
 
                             <button type="submit" class="btn btn-primary">
@@ -683,9 +737,31 @@
             </div>
         </footer>
 
+        <!-- Particles Background -->
+        <div id="particles-js" class="particles-js"></div>
+
         <!-- Back to Top -->
         <a href="#about" class="back-to-top">
             <i class="fas fa-chevron-up"></i>
         </a>
+                // Create particles background
+                const particlesContainer = document.createElement('div');
+                particlesContainer.id = 'particles-js';
+                particlesContainer.className = 'particles-js';
+
+                // Add particles to the hero section
+                const heroSection = document.querySelector('.hero');
+                heroSection.appendChild(particlesContainer);
+
+                // Create particles
+                const particleCount = 30;
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+
+                    // Random position
+                    const posX = Math.random() * 100;
+                    const posY = Math.random() * 100;
+
     </body>
 </html>
