@@ -100,9 +100,7 @@ code {
     color: var(--accent-primary);
 }
 
-/* =====================
-   NAVIGATION
-   ===================== */
+/* NAVIGATION */
 .navbar {
     position: fixed;
     top: 0;
@@ -178,9 +176,7 @@ code {
     cursor: pointer;
 }
 
-/* =====================
-   HERO SECTION
-   ===================== */
+/* HERO SECTION */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -493,9 +489,7 @@ code {
     color: var(--text-muted);
 }
 
-/* =====================
-   SECTIONS
-   ===================== */
+/* SECTIONS */
 .section {
     padding: 100px 0;
     position: relative;
@@ -529,9 +523,7 @@ code {
     margin: 0 auto;
 }
 
-/* =====================
-   PHILOSOPHY SECTION
-   ===================== */
+/* PHILOSOPHY SECTION */
 .philosophy-section {
     background: linear-gradient(180deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
 }
@@ -608,9 +600,7 @@ code {
     border-radius: 4px;
 }
 
-/* =====================
-   PROJECTS SECTION
-   ===================== */
+/* PROJECTS SECTION */
 .projects-section {
     background: var(--primary-dark);
 }
@@ -823,9 +813,7 @@ code {
     color: var(--accent-secondary);
 }
 
-/* =====================
-   SKILLS SECTION
-   ===================== */
+/* SKILLS SECTION */
 .skills-section {
     background: var(--secondary-dark);
 }
@@ -955,9 +943,7 @@ code {
     transition: width 1s ease-out;
 }
 
-/* =====================
-   ROADMAP SECTION
-   ===================== */
+/* ROADMAP SECTION */
 .roadmap-section {
     background: var(--primary-dark);
 }
@@ -1041,9 +1027,7 @@ code {
     color: var(--text-secondary);
 }
 
-/* =====================
-   ACHIEVEMENTS SECTION
-   ===================== */
+/* ACHIEVEMENTS SECTION */
 .achievements-section {
     background: var(--secondary-dark);
 }
@@ -1108,9 +1092,7 @@ code {
     color: var(--text-secondary);
 }
 
-/* =====================
-   CONTACT SECTION
-   ===================== */
+/* CONTACT SECTION */
 .contact-section {
     background: var(--primary-dark);
 }
@@ -1288,9 +1270,7 @@ code {
     font-size: 1.1rem;
 }
 
-/* =====================
-   FOOTER
-   ===================== */
+/* FOOTER */
 .footer {
     background: var(--secondary-dark);
     border-top: 1px solid rgba(99, 102, 241, 0.1);
@@ -1378,9 +1358,7 @@ code {
     font-size: 0.9rem;
 }
 
-/* =====================
-   BACK TO TOP
-   ===================== */
+/* BACK TO TOP */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -1406,9 +1384,7 @@ code {
     color: white;
 }
 
-/* =====================
-   RESPONSIVE DESIGN
-   ===================== */
+/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
     .hero-container {
         grid-template-columns: 1fr;
