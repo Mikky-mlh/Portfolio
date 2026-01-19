@@ -1,4 +1,3 @@
-// Typing Animation
 const typingTexts = [
     "I ship production-ready executables",
     "Patterns are learned, not discovered",
@@ -25,23 +24,21 @@ function typeText() {
     let typeSpeed = isDeleting ? 50 : 100;
     
     if (!isDeleting && charIndex === currentText.length) {
-        typeSpeed = 2000; // Pause at end
+        typeSpeed = 2000;
         isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         textIndex = (textIndex + 1) % typingTexts.length;
-        typeSpeed = 500; // Pause before next word
+        typeSpeed = 500;
     }
     
     setTimeout(typeText, typeSpeed);
 }
 
-// Start typing animation when page loads
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeText, 1000);
 });
 
-// Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -55,49 +52,50 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll effect
 const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
+const heroSection = document.querySelector('.hero');
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-    } else {
-        navbar.style.boxShadow = 'none';
-    }
-    
-    lastScroll = currentScroll;
-});
+const navbarObserver = new IntersectionObserver(
+    ([entry]) => {
+        if (!entry.isIntersecting) {
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+        } else {
+            navbar.style.boxShadow = 'none';
+        }
+    },
+    { threshold: 0.1 }
+);
 
-// Animate skill bars on scroll
-const skillBars = document.querySelectorAll('.skill-progress');
-let animated = false;
-
-function animateSkillBars() {
-    if (animated) return;
-    
-    const skillsSection = document.querySelector('#skills');
-    if (!skillsSection) return;
-    
-    const rect = skillsSection.getBoundingClientRect();
-    
-    if (rect.top < window.innerHeight * 0.8) {
-        skillBars.forEach(bar => {
-            const width = bar.style.width;
-            bar.style.width = '0';
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 100);
-        });
-        animated = true;
-    }
+if (heroSection) {
+    navbarObserver.observe(heroSection);
 }
 
-window.addEventListener('scroll', animateSkillBars);
+// Scroll Spy - Update nav links based on scroll position
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section[id], header[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const scrollPosition = window.scrollY + 100; // Offset for navbar height
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
 
-// Mobile navigation toggle
+// Run scroll spy on scroll and on page load
+window.addEventListener('scroll', updateActiveNavLink);
+window.addEventListener('load', updateActiveNavLink);
+
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -107,7 +105,6 @@ if (navToggle) {
     });
 }
 
-// Form submission handling
 const contactForm = document.querySelector('#contact-form');
 const thankYouPage = document.querySelector('#thank-you-page');
 const backToContactBtn = document.querySelector('#back-to-contact');
@@ -116,55 +113,53 @@ if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // Get form data
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
 
-        // Show thank you page
         document.querySelector('.contact-form').style.display = 'none';
         thankYouPage.style.display = 'flex';
 
-        // Optional: Send email in the background
         const subject = encodeURIComponent(data.subject);
         const body = encodeURIComponent(
             `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
         );
 
-        // Create mailto link (opens in new tab/window)
         window.open(`mailto:yuvrajsarathe07@gmail.com?subject=${subject}&body=${body}`, '_blank');
     });
 }
 
-// Handle back to contact form button
 if (backToContactBtn) {
     backToContactBtn.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // Hide thank you page and show form again
         thankYouPage.style.display = 'none';
         document.querySelector('.contact-form').style.display = 'block';
 
-        // Reset form
         if (contactForm) {
             contactForm.reset();
         }
     });
 }
 
-// Back to top button visibility
 const backToTop = document.querySelector('.back-to-top');
 
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 500) {
-        backToTop.style.opacity = '1';
-        backToTop.style.visibility = 'visible';
-    } else {
-        backToTop.style.opacity = '0';
-        backToTop.style.visibility = 'hidden';
-    }
-});
+const backToTopObserver = new IntersectionObserver(
+    ([entry]) => {
+        if (!entry.isIntersecting) {
+            backToTop.style.opacity = '1';
+            backToTop.style.visibility = 'visible';
+        } else {
+            backToTop.style.opacity = '0';
+            backToTop.style.visibility = 'hidden';
+        }
+    },
+    { threshold: 0.1 }
+);
 
-// Intersection Observer for fade-in animations
+if (heroSection && backToTop) {
+    backToTopObserver.observe(heroSection);
+}
+
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -179,13 +174,11 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe sections and cards
 document.querySelectorAll('.section, .project-card, .achievement-card, .philosophy-card').forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
 });
 
-// Card rotation animation
 document.querySelectorAll('.project-card, .achievement-card, .philosophy-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
@@ -206,7 +199,6 @@ document.querySelectorAll('.project-card, .achievement-card, .philosophy-card').
     });
 });
 
-// Add CSS for fade-in animation
 const style = document.createElement('style');
 style.textContent = `
     .fade-in {
