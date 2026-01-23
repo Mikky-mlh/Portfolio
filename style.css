@@ -99,7 +99,6 @@ code {
     color: var(--accent-primary);
 }
 
-/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -198,7 +197,6 @@ code {
     cursor: pointer;
 }
 
-/* Hero */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -384,7 +382,6 @@ code {
     justify-content: center;
 }
 
-/* Hero Stats */
 .hero-stats {
     display: flex;
     align-items: center;
@@ -415,7 +412,6 @@ code {
     background: rgba(99,102,241,.2);
 }
 
-/* Code Window */
 .code-window {
     background: var(--secondary-dark);
     border: 1px solid rgba(99,102,241,.2);
@@ -526,7 +522,6 @@ code {
     color: var(--text-muted);
 }
 
-/* Sections */
 .section {
     padding: 100px 0;
     position: relative;
@@ -560,7 +555,6 @@ code {
     margin: 0 auto;
 }
 
-/* Shared Card Styles */
 .philosophy-card,
 .achievement-card,
 .timeline-content {
@@ -596,7 +590,6 @@ code {
     transform: scaleX(1);
 }
 
-/* Philosophy */
 .philosophy-section {
     background: linear-gradient(180deg, var(--primary-dark), var(--secondary-dark));
 }
