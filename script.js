@@ -1,7 +1,7 @@
 const typingTexts = [
     "I ship production-ready executables",
     "Patterns are learned, not discovered",
-    "Cyber Security as a Skill",
+    "Security-Focused Development",
     "Efficiency Obsessed"
 ];
 
