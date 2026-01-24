@@ -1,43 +1,3 @@
-const typingTexts = [
-    "I ship production-ready executables",
-    "Patterns are learned, not discovered",
-    "Security-Focused Development",
-    "Efficiency Obsessed"
-];
-
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typingElement = document.querySelector('.typing-text');
-
-function typeText() {
-    const currentText = typingTexts[textIndex];
-    
-    if (isDeleting) {
-        typingElement.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingElement.textContent = currentText.substring(0, charIndex + 1);
-        charIndex++;
-    }
-    
-    let typeSpeed = isDeleting ? 50 : 100;
-    
-    if (!isDeleting && charIndex === currentText.length) {
-        typeSpeed = 2000;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % typingTexts.length;
-        typeSpeed = 500;
-    }
-    
-    setTimeout(typeText, typeSpeed);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(typeText, 1000);
-});
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -184,47 +144,19 @@ document.querySelectorAll('.project-card, .achievement-card, .philosophy-card').
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        
+
         const rotateX = (y - centerY) / 20;
         const rotateY = (centerX - x) / 20;
-        
+
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
     });
-    
+
     card.addEventListener('mouseleave', () => {
         card.style.transform = 'translateY(0)';
     });
 });
-
-const style = document.createElement('style');
-style.textContent = `
-    .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    
-    .fade-in-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .nav-menu.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: rgba(10, 15, 26, 0.98);
-        padding: 20px;
-        gap: 15px;
-        border-bottom: 1px solid rgba(99, 102, 241, 0.1);
-    }
-`;
-document.head.appendChild(style);
 
 console.log('🚀 Portfolio loaded successfully!');
