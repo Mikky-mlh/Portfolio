@@ -1,4 +1,76 @@
 
+// Custom Cursor with Trailing Animation
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorTrails = document.querySelectorAll('.cursor-trail');
+
+let mouseX = 0;
+let mouseY = 0;
+let dotX = 0;
+let dotY = 0;
+
+// Trail positions array
+const trailPositions = cursorTrails.map ? cursorTrails.map(() => ({ x: 0, y: 0 })) : Array.from(cursorTrails).map(() => ({ x: 0, y: 0 }));
+
+// Track mouse movement
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+// Animation loop for smooth cursor movement
+function animateCursor() {
+    // Smooth follow for main dot
+    dotX += (mouseX - dotX) * 0.2;
+    dotY += (mouseY - dotY) * 0.2;
+    
+    if (cursorDot) {
+        cursorDot.style.left = dotX + 'px';
+        cursorDot.style.top = dotY + 'px';
+    }
+    
+    // Animate trails with increasing delay
+    cursorTrails.forEach((trail, index) => {
+        const delay = (index + 1) * 0.15;
+        trailPositions[index].x += (dotX - trailPositions[index].x) * (0.3 - index * 0.04);
+        trailPositions[index].y += (dotY - trailPositions[index].y) * (0.3 - index * 0.04);
+        
+        trail.style.left = trailPositions[index].x + 'px';
+        trail.style.top = trailPositions[index].y + 'px';
+    });
+    
+    requestAnimationFrame(animateCursor);
+}
+
+// Start animation
+if (cursorDot && cursorTrails.length > 0) {
+    animateCursor();
+}
+
+// Hover effect on interactive elements
+const interactiveElements = document.querySelectorAll('a, button, .btn, .project-card, .philosophy-card, .skill-icon, .nav-toggle');
+
+interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        if (cursorDot) cursorDot.classList.add('hover');
+    });
+    el.addEventListener('mouseleave', () => {
+        if (cursorDot) cursorDot.classList.remove('hover');
+    });
+});
+
+// Handle mouse leaving/entering window
+document.addEventListener('mouseleave', () => {
+    if (cursorDot) cursorDot.style.opacity = '0';
+    cursorTrails.forEach(trail => trail.style.opacity = '0');
+});
+
+document.addEventListener('mouseenter', () => {
+    if (cursorDot) cursorDot.style.opacity = '1';
+    cursorTrails.forEach((trail, index) => {
+        trail.style.opacity = 0.6 - (index * 0.1);
+    });
+});
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();

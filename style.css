@@ -29,6 +29,92 @@ body {
     color: #bbb;
     line-height: 1.6;
     min-height: 100vh;
+    cursor: none;
+}
+
+/* Hide default cursor on interactive elements */
+a, button, .btn, .nav-toggle, .project-card, .philosophy-card, .skill-icon {
+    cursor: none;
+}
+
+/* Custom Cursor Styles */
+.cursor-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+}
+
+.cursor-dot {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.15s ease, height 0.15s ease, background 0.15s ease;
+    box-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold), 0 0 30px var(--gold);
+}
+
+.cursor-dot.hover {
+    width: 40px;
+    height: 40px;
+    background: rgba(201, 162, 39, 0.3);
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 20px var(--gold), 0 0 40px var(--gold);
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.6;
+    box-shadow: 0 0 8px var(--gold);
+}
+
+.cursor-trail.trail-1 {
+    width: 8px;
+    height: 8px;
+    opacity: 0.5;
+}
+
+.cursor-trail.trail-2 {
+    width: 7px;
+    height: 7px;
+    opacity: 0.4;
+}
+
+.cursor-trail.trail-3 {
+    width: 6px;
+    height: 6px;
+    opacity: 0.3;
+}
+
+.cursor-trail.trail-4 {
+    width: 5px;
+    height: 5px;
+    opacity: 0.2;
+}
+
+.cursor-trail.trail-5 {
+    width: 4px;
+    height: 4px;
+    opacity: 0.1;
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+    body, a, button, .btn, .nav-toggle, .project-card, .philosophy-card, .skill-icon {
+        cursor: auto;
+    }
+    .cursor-container {
+        display: none;
+    }
 }
 
 ::-webkit-scrollbar {
