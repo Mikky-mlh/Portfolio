@@ -896,6 +896,13 @@ a, button, .theme-btn, .hamburger, .back-top { cursor: none; }
     background: linear-gradient(135deg, #d0c0c8 0%, #b8a0a8 100%);
 }
 
+.fc-top-gitdeep {
+    background: linear-gradient(135deg, #1a1a4a 0%, #0a0a2a 100%);
+}
+[data-theme="manuscript"] .fc-top-gitdeep {
+    background: linear-gradient(135deg, #c8c0d8 0%, #b0a0c8 100%);
+}
+
 .fc-live {
     display: flex;
     align-items: center;
