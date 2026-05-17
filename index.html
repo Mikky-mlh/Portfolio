@@ -36,40 +36,40 @@
     <!-- Scroll progress indicator -->
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-    <!-- Navigation -->
+    <!-- Navigation — Floating Island Pill -->
     <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo" aria-label="Go to top">
-                <span class="nav-logo-text">YS</span>
-            </a>
+            <a href="#hero" class="nav-logo" aria-label="Go to top">YS</a>
 
-            <div class="nav-links" role="list">
-                <a href="#about" class="nav-link" role="listitem">About</a>
-                <a href="#projects" class="nav-link" role="listitem">Projects</a>
-                <a href="#skills" class="nav-link" role="listitem">Skills</a>
-                <a href="#certificates" class="nav-link" role="listitem">Certificates</a>
-                <a href="#contact" class="nav-link" role="listitem">Contact</a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
 
             <div class="nav-actions">
                 <button class="theme-btn" id="themeToggle" aria-label="Switch color theme" title="Switch theme">
-                    <span class="theme-btn-dot"></span>
-                    <span class="theme-btn-label" id="themeName">Obsidian</span>
+                    <span class="theme-dot"></span>
                 </button>
-                <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">
+                <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="ham-line"></span>
                     <span class="ham-line"></span>
                     <span class="ham-line"></span>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile menu -->
-        <div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="menu">
-            <a href="#about" class="mobile-link" role="menuitem">About</a>
-            <a href="#projects" class="mobile-link" role="menuitem">Projects</a>
-            <a href="#skills" class="mobile-link" role="menuitem">Skills</a>
-            <a href="#certificates" class="mobile-link" role="menuitem">Certificates</a>
-            <a href="#contact" class="mobile-link" role="menuitem">Contact</a>
+        <!-- Mobile full-screen overlay -->
+        <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
+            <nav class="mobile-links">
+                <a href="#about" class="mobile-link" role="menuitem" style="--i:0">About</a>
+                <a href="#projects" class="mobile-link" role="menuitem" style="--i:1">Projects</a>
+                <a href="#skills" class="mobile-link" role="menuitem" style="--i:2">Skills</a>
+                <a href="#certificates" class="mobile-link" role="menuitem" style="--i:3">Certificates</a>
+                <a href="#contact" class="mobile-link" role="menuitem" style="--i:4">Contact</a>
+            </nav>
         </div>
     </nav>
 
@@ -79,7 +79,7 @@
         <header id="hero" class="hero">
             <div class="hero-inner">
 
-                <div class="hero-eyebrow" data-animate="fade-up">
+                <div class="hero-eyebrow" data-reveal="fade-up">
                     <span class="status-pulse" aria-label="Currently available"></span>
                     <span class="status-text">Available for internships &amp; collaborations</span>
                     <span class="hero-meta">
@@ -92,26 +92,35 @@
                 </div>
 
                 <h1 class="hero-name" aria-label="Yuvraj Sarathe">
-                    <span class="hero-name-line" data-animate="slide-up" data-delay="1">Yuvraj</span>
-                    <span class="hero-name-line hero-name-accent" data-animate="slide-up" data-delay="2">Sarathe</span>
+                    <span class="hero-name-line" data-reveal="slide-up" data-delay="1">Yuvraj</span>
+                    <span class="hero-name-line hero-name-accent" data-reveal="slide-up" data-delay="2">Sarathe</span>
                 </h1>
 
-                <div class="hero-rule" data-animate="expand" data-delay="3" aria-hidden="true"></div>
+                <div class="hero-rule" data-reveal="expand" data-delay="3" aria-hidden="true"></div>
 
-                <div class="hero-bottom" data-animate="fade-up" data-delay="4">
+                <div class="hero-bottom" data-reveal="fade-up" data-delay="4">
                     <p class="hero-role">Production-First Developer</p>
                     <p class="hero-desc">
                         Most developers write code. I ship software. Every project is packaged
                         as a standalone executable — zero setup, immediate execution.
                     </p>
                     <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary">View projects</a>
-                        <a href="https://github.com/Yuvraj-Sarathe" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub ↗</a>
-                        <a href="#contact" class="btn btn-text">Get in touch →</a>
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View projects</span>
+                            <span class="btn-icon">→</span>
+                        </a>
+                        <a href="https://github.com/Yuvraj-Sarathe" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <span>GitHub</span>
+                            <span class="btn-icon">↗</span>
+                        </a>
+                        <a href="#contact" class="btn btn-text">
+                            <span>Get in touch</span>
+                            <span class="btn-icon">→</span>
+                        </a>
                     </div>
                 </div>
 
-                <div class="hero-stats" data-animate="fade-up" data-delay="5">
+                <div class="hero-stats" data-reveal="fade-up" data-delay="5">
                     <div class="stat-item">
                         <span class="stat-num">13+</span>
                         <span class="stat-label">Projects shipped</span>
@@ -143,12 +152,12 @@
         <!-- ═══════════════ ABOUT ═══════════════ -->
         <section id="about" class="section approach-section">
             <div class="section-inner">
-                <div class="section-header" data-animate="fade-up">
+                <div class="section-header" data-reveal="fade-up">
                     <span class="section-num" aria-hidden="true">01</span>
                     <h2 class="section-heading">About me</h2>
                 </div>
 
-                <div class="about-intro" data-animate="fade-up" data-delay="1">
+                <div class="about-intro" data-reveal="fade-up" data-delay="1">
                     <p class="about-bio">
                         B.Tech Cyber Security student at LNCT Bhopal with a passion for building production-ready software. 
                         I don't just write code — I ship applications that users can actually run without dependency headaches. 
@@ -157,7 +166,7 @@
                     </p>
                 </div>
 
-                <div class="education-block" data-animate="fade-up" data-delay="2">
+                <div class="education-block" data-reveal="fade-up" data-delay="2">
                     <h3 class="education-title">Education</h3>
                     <div class="education-card">
                         <div class="edu-main">
@@ -179,29 +188,29 @@
                     </div>
                 </div>
 
-                <div class="approach-grid" data-animate="fade-up" data-delay="3">
-                    <div class="approach-item" data-animate="fade-up" data-delay="1">
+                <div class="approach-grid" data-reveal="fade-up" data-delay="3">
+                    <div class="approach-item" data-reveal="fade-up" data-delay="1">
                         <span class="approach-num" aria-hidden="true">01</span>
                         <h3>Java applications</h3>
                         <p>Bundled JRE (the runtime environment users need to execute Java programs) for zero-friction <code>.exe</code> execution. No JDK installation required on user machines.</p>
                         <span class="approach-tag">Just download &amp; run</span>
                     </div>
 
-                    <div class="approach-item" data-animate="fade-up" data-delay="2">
+                    <div class="approach-item" data-reveal="fade-up" data-delay="2">
                         <span class="approach-num" aria-hidden="true">02</span>
                         <h3>Python projects</h3>
                         <p>Standalone binaries via PyInstaller (a tool that packs Python code and all its dependencies into a single distributable file). No Python interpreter needed on the target machine.</p>
                         <span class="approach-tag">No dependencies</span>
                     </div>
 
-                    <div class="approach-item" data-animate="fade-up" data-delay="3">
+                    <div class="approach-item" data-reveal="fade-up" data-delay="3">
                         <span class="approach-num" aria-hidden="true">03</span>
                         <h3>Security from day one</h3>
                         <p>Input validation (checking that user data is safe before processing it) and exception handling (intercepting errors before they crash the program) are not afterthoughts — they're built in at the start.</p>
                         <span class="approach-tag">Secure by design</span>
                     </div>
 
-                    <div class="approach-item" data-animate="fade-up" data-delay="4">
+                    <div class="approach-item" data-reveal="fade-up" data-delay="4">
                         <span class="approach-num" aria-hidden="true">04</span>
                         <h3>Pattern-based learning</h3>
                         <p>DSA (Data Structures and Algorithms — the specific ways we organize and process data to solve problems efficiently) learned through pattern recognition, not rote memorization. Striver A2Z curriculum.</p>
@@ -214,57 +223,18 @@
         <!-- ═══════════════ PROJECTS ═══════════════ -->
         <section id="projects" class="section projects-section">
             <div class="section-inner">
-                <div class="section-header" data-animate="fade-up">
+                <div class="section-header" data-reveal="fade-up">
                     <span class="section-num" aria-hidden="true">02</span>
                     <h2 class="section-heading">Featured work</h2>
                 </div>
 
                 <!-- Featured projects -->
-                <div class="featured-block" data-animate="fade-up" data-delay="1">
+                <div class="featured-block" data-reveal="fade-up" data-delay="1">
                     <p class="featured-label">Live applications</p>
                     <div class="featured-grid">
-                        <article class="featured-card">
-                            <div class="featured-card-top fc-top-1">
-                                <div class="fc-live">
-                                    <span class="live-dot" aria-label="Live"></span>
-                                    Live
-                                </div>
-                                <span class="fc-year">2025</span>
-                            </div>
-                            <div class="featured-card-body">
-                                <span class="fc-type">AI-powered web app</span>
-                                <h3 class="fc-title">CATMATHS</h3>
-                                <p class="fc-desc">Free web application helping students prepare for the CAT quantitative section using AI-generated tests. Deployed via Netlify and Vercel.</p>
-                                <div class="fc-tech">
-                                    <span>Web Tech</span>
-                                    <span>AI</span>
-                                </div>
-                                <a href="https://catmaths.vercel.app/" target="_blank" rel="noopener noreferrer" class="fc-link">Open live demo ↗</a>
-                            </div>
-                        </article>
-
-                        <article class="featured-card">
-                            <div class="featured-card-top fc-top-3">
-                                <div class="fc-live">
-                                    <span class="live-dot" aria-label="Live"></span>
-                                    Live
-                                </div>
-                                <span class="fc-year">2025</span>
-                            </div>
-                            <div class="featured-card-body">
-                                <span class="fc-type">Production web application</span>
-                                <h3 class="fc-title">OFE-PRO</h3>
-                                <p class="fc-desc">Better version of the One HTML File Challenge. Full-fledged production version with modular architecture, enhanced UX, optimized performance, and scalable state management.</p>
-                                <div class="fc-tech">
-                                    <span>React</span>
-                                    <span>TypeScript</span>
-                                    <span>Tailwind CSS</span>
-                                </div>
-                                <a href="https://ofe-pro.vercel.app/" target="_blank" rel="noopener noreferrer" class="fc-link">Open live demo ↗</a>
-                            </div>
-                        </article>
-
-                        <article class="featured-card">
+                        <article class="card-shell">
+                            <div class="card-core">
+                            <div class="featured-card">
                             <div class="featured-card-top fc-top-gitdeep">
                                 <div class="fc-live">
                                     <span class="live-dot" aria-label="Live"></span>
@@ -284,12 +254,89 @@
                                 </div>
                                 <a href="https://gitdeep.vercel.app/" target="_blank" rel="noopener noreferrer" class="fc-link">Open live demo ↗</a>
                             </div>
+                            </div>
+                        </div>
+                        </article>
+
+                        <article class="card-shell">
+                            <div class="card-core">
+                            <div class="featured-card">
+                            <div class="featured-card-top fc-top-gitissue">
+                                <div class="fc-live">
+                                    <span class="live-dot" aria-label="Live"></span>
+                                    Live
+                                </div>
+                                <span class="fc-year">2026</span>
+                            </div>
+                            <div class="featured-card-body">
+                                <span class="fc-type">Global Issue Explorer</span>
+                                <h3 class="fc-title">GitIssue</h3>
+                                <p class="fc-desc">Cross-repo GitHub issue search. Browse, filter, and sort issues across all of GitHub with label tracking, language filters, and customizable views — entirely client-side.</p>
+                                <div class="fc-tech">
+                                    <span>Next.js</span>
+                                    <span>TypeScript</span>
+                                    <span>Tailwind</span>
+                                    <span>GitHub API</span>
+                                </div>
+                                <a href="https://gitissue.vercel.app/" target="_blank" rel="noopener noreferrer" class="fc-link">Open live demo ↗</a>
+                            </div>
+                            </div>
+                        </div>
+                        </article>
+
+                        <article class="card-shell">
+                            <div class="card-core">
+                            <div class="featured-card">
+                            <div class="featured-card-top fc-top-1">
+                                <div class="fc-live">
+                                    <span class="live-dot" aria-label="Live"></span>
+                                    Live
+                                </div>
+                                <span class="fc-year">2025</span>
+                            </div>
+                            <div class="featured-card-body">
+                                <span class="fc-type">AI-powered web app</span>
+                                <h3 class="fc-title">CATMATHS</h3>
+                                <p class="fc-desc">Free web application helping students prepare for the CAT quantitative section using AI-generated tests. Deployed via Netlify and Vercel.</p>
+                                <div class="fc-tech">
+                                    <span>Web Tech</span>
+                                    <span>AI</span>
+                                </div>
+                                <a href="https://catmaths.vercel.app/" target="_blank" rel="noopener noreferrer" class="fc-link">Open live demo ↗</a>
+                            </div>
+                            </div>
+                        </div>
+                        </article>
+
+                        <article class="card-shell">
+                            <div class="card-core">
+                            <div class="featured-card">
+                            <div class="featured-card-top fc-top-3">
+                                <div class="fc-live">
+                                    <span class="live-dot" aria-label="Live"></span>
+                                    Live
+                                </div>
+                                <span class="fc-year">2025</span>
+                            </div>
+                            <div class="featured-card-body">
+                                <span class="fc-type">Production web application</span>
+                                <h3 class="fc-title">OFE-PRO</h3>
+                                <p class="fc-desc">Better version of the One HTML File Challenge. Full-fledged production version with modular architecture, enhanced UX, optimized performance, and scalable state management.</p>
+                                <div class="fc-tech">
+                                    <span>React</span>
+                                    <span>TypeScript</span>
+                                    <span>Tailwind CSS</span>
+                                </div>
+                                <a href="https://ofe-pro.vercel.app/" target="_blank" rel="noopener noreferrer" class="fc-link">Open live demo ↗</a>
+                            </div>
+                            </div>
+                        </div>
                         </article>
                     </div>
                 </div>
 
                 <!-- Editorial project list -->
-                <div class="project-list" data-animate="fade-up" data-delay="2">
+                <div class="project-list" data-reveal="fade-up" data-delay="2">
                     <p class="featured-label">All projects</p>
                     <div class="project-list-head" aria-hidden="true">
                         <span>Title</span>
@@ -299,7 +346,7 @@
                     </div>
 
                     <article class="project-row">
-                        <span class="pr-num" aria-hidden="true">02</span>
+                        <span class="pr-num" aria-hidden="true">01</span>
                         <div class="pr-info">
                             <strong class="pr-title">GitDeep</strong>
                             <span class="pr-sub">AI GitHub profile analyzer — hirability scoring, SWOT, career slope, buzzword detection, 12 AI providers, zero data storage.</span>
@@ -313,6 +360,25 @@
                         <span class="pr-links">
                             <a href="https://gitdeep.vercel.app" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="GitDeep live demo">Live ↗</a>
                             <a href="https://github.com/Yuvraj-Sarathe/GitDeep" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="GitDeep source">GitHub ↗</a>
+                        </span>
+                    </article>
+
+                    <article class="project-row">
+                        <span class="pr-num" aria-hidden="true">02</span>
+                        <div class="pr-info">
+                            <strong class="pr-title">GitIssue</strong>
+                            <span class="pr-sub">Cross-repo GitHub issue search. Browse, filter, and sort issues across all of GitHub with label tracking, language filters, and customizable views — entirely client-side.</span>
+                        </div>
+                        <div class="pr-stack">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Tailwind</span>
+                            <span class="tag">GitHub API</span>
+                        </div>
+                        <span class="pr-type">Live web app</span>
+                        <span class="pr-links">
+                            <a href="https://gitissue.vercel.app" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="GitIssue live demo">Live ↗</a>
+                            <a href="https://github.com/Yuvraj-Sarathe/Git-Issue" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="GitIssue source">GitHub ↗</a>
                         </span>
                     </article>
 
@@ -476,13 +542,13 @@
         <!-- ═══════════════ SKILLS ═══════════════ -->
         <section id="skills" class="section skills-section">
             <div class="section-inner">
-                <div class="section-header" data-animate="fade-up">
+                <div class="section-header" data-reveal="fade-up">
                     <span class="section-num" aria-hidden="true">03</span>
                     <h2 class="section-heading">Stack &amp; tools</h2>
                 </div>
 
                 <div class="skills-cols">
-                    <div class="skills-col" data-animate="fade-up" data-delay="1">
+                    <div class="skills-col" data-reveal="fade-up" data-delay="1">
                         <h3 class="skills-col-title">Proficient</h3>
                         <ul class="skills-list">
                             <li>
@@ -512,7 +578,7 @@
                         </ul>
                     </div>
 
-                    <div class="skills-col" data-animate="fade-up" data-delay="2">
+                    <div class="skills-col" data-reveal="fade-up" data-delay="2">
                         <h3 class="skills-col-title">Familiar</h3>
                         <ul class="skills-list">
                             <li>
@@ -534,7 +600,7 @@
                         </ul>
                     </div>
 
-                    <div class="skills-col" data-animate="fade-up" data-delay="3">
+                    <div class="skills-col" data-reveal="fade-up" data-delay="3">
                         <h3 class="skills-col-title">Expanding in 2026</h3>
                         <ul class="skills-list">
                             <li>
@@ -562,12 +628,12 @@
         <!-- ═══════════════ CERTIFICATES ═══════════════ -->
         <section id="certificates" class="section certificates-section">
             <div class="section-inner">
-                <div class="section-header" data-animate="fade-up">
+                <div class="section-header" data-reveal="fade-up">
                     <span class="section-num" aria-hidden="true">04</span>
                     <h2 class="section-heading">Certifications</h2>
                 </div>
 
-                <div class="project-list" data-animate="fade-up" data-delay="1">
+                <div class="project-list" data-reveal="fade-up" data-delay="1">
                     <article class="project-row">
                         <span class="pr-num" aria-hidden="true">01</span>
                         <div class="pr-info">
@@ -639,14 +705,14 @@
         <!-- ═══════════════ CONTACT ═══════════════ -->
         <section id="contact" class="section contact-section">
             <div class="section-inner">
-                <div class="section-header" data-animate="fade-up">
+                <div class="section-header" data-reveal="fade-up">
                     <span class="section-num" aria-hidden="true">05</span>
                     <h2 class="section-heading">Let's connect</h2>
                     <p class="section-sub">Open to technical feedback, open-source collaboration, and security-focused development opportunities.</p>
                 </div>
 
                 <div class="contact-grid">
-                    <div class="contact-form-wrap" data-animate="fade-up" data-delay="1">
+                    <div class="contact-form-wrap" data-reveal="fade-up" data-delay="1">
                         <form id="contactForm" class="contact-form" novalidate>
                             <div class="form-group">
                                 <label for="name">Name</label>
@@ -673,7 +739,8 @@
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-submit">
-                                Send message <span class="btn-arrow">→</span>
+                                <span>Send message</span>
+                                <span class="btn-icon">→</span>
                             </button>
                         </form>
 
@@ -681,11 +748,14 @@
                             <span class="ty-icon" aria-hidden="true">✓</span>
                             <h3>Message sent</h3>
                             <p>Your message has been forwarded. I'll get back to you soon.</p>
-                            <button class="btn btn-outline" id="backToForm">Send another →</button>
+                            <button class="btn btn-outline" id="backToForm">
+                                <span>Send another</span>
+                                <span class="btn-icon">→</span>
+                            </button>
                         </div>
                     </div>
 
-                    <aside class="contact-sidebar" data-animate="fade-up" data-delay="2">
+                    <aside class="contact-sidebar" data-reveal="fade-up" data-delay="2">
                         <nav class="contact-links" aria-label="Social links">
                             <a href="mailto:yuvrajsarathe07@gmail.com" class="contact-link">
                                 <span class="cl-label">Email</span>

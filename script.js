@@ -7,21 +7,30 @@ const THEMES = [
     { id: 'obsidian',   label: 'Obsidian' },
     { id: 'phosphor',   label: 'Phosphor' },
     { id: 'manuscript', label: 'Manuscript' },
+    { id: 'alabaster',  label: 'Alabaster' },
 ];
 
 let currentThemeIdx = 0;
+let themeSwitchTimer = null;
 
 function loadTheme() {
     const saved = localStorage.getItem('portfolio-theme');
     const idx   = THEMES.findIndex(t => t.id === saved);
     currentThemeIdx = idx >= 0 ? idx : 0;
-    applyTheme(THEMES[currentThemeIdx]);
+    applyTheme(THEMES[currentThemeIdx], true);
 }
 
-function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme.id);
-    const label = document.getElementById('themeName');
-    if (label) label.textContent = theme.label;
+function applyTheme(theme, immediate) {
+    if (immediate) {
+        document.documentElement.setAttribute('data-theme', theme.id);
+    } else {
+        document.documentElement.setAttribute('data-theme-switching', '');
+        document.documentElement.setAttribute('data-theme', theme.id);
+        clearTimeout(themeSwitchTimer);
+        themeSwitchTimer = setTimeout(() => {
+            document.documentElement.removeAttribute('data-theme-switching');
+        }, 20);
+    }
     localStorage.setItem('portfolio-theme', theme.id);
 }
 
@@ -115,21 +124,10 @@ function setupScrollProgress() {
    NAV — scroll effect + scroll spy
    ═══════════════════════════════════════════════════════════ */
 function setupNav() {
-    const nav      = document.getElementById('nav');
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id], header[id]');
 
-    if (!nav) return;
-
     const onScroll = () => {
-        // Sticky shadow
-        if (window.scrollY > 20) {
-            nav.classList.add('is-scrolled');
-        } else {
-            nav.classList.remove('is-scrolled');
-        }
-
-        // Scroll spy
         const offset = 90;
         let current  = '';
         sections.forEach(sec => {
@@ -147,28 +145,44 @@ function setupNav() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   MOBILE MENU
+   MOBILE MENU — Full-screen overlay
    ═══════════════════════════════════════════════════════════ */
 function setupMobileMenu() {
-    const hamburger  = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (!hamburger || !mobileMenu) return;
+    const hamburger    = document.getElementById('hamburger');
+    const overlay      = document.getElementById('mobileOverlay');
+    if (!hamburger || !overlay) return;
+
+    const closeMenu = () => {
+        hamburger.classList.remove('is-open');
+        overlay.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    };
+
+    const openMenu = () => {
+        hamburger.classList.add('is-open');
+        overlay.classList.add('is-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
 
     hamburger.addEventListener('click', () => {
-        const isOpen = hamburger.classList.toggle('is-open');
-        mobileMenu.classList.toggle('is-open', isOpen);
-        hamburger.setAttribute('aria-expanded', String(isOpen));
-        mobileMenu.setAttribute('aria-hidden',  String(!isOpen));
+        const isOpen = hamburger.classList.contains('is-open');
+        isOpen ? closeMenu() : openMenu();
     });
 
     // Close on link click
-    mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('is-open');
-            mobileMenu.classList.remove('is-open');
-            hamburger.setAttribute('aria-expanded', 'false');
-            mobileMenu.setAttribute('aria-hidden',  'true');
-        });
+    overlay.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+            closeMenu();
+        }
     });
 }
 
@@ -189,22 +203,31 @@ function setupSmoothScroll() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SCROLL ANIMATIONS (IntersectionObserver)
+   SCROLL ANIMATIONS (IntersectionObserver) — blur reveal
    ═══════════════════════════════════════════════════════════ */
 function setupScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
+                const el = entry.target;
+                // Toggle will-change for GPU acceleration
+                el.classList.add('will-change-pulse');
+                requestAnimationFrame(() => {
+                    el.classList.add('is-visible');
+                    // Remove will-change after transition completes
+                    setTimeout(() => {
+                        el.classList.remove('will-change-pulse');
+                    }, 1000);
+                });
+                observer.unobserve(el);
             }
         });
     }, {
-        threshold:   0.1,
-        rootMargin: '0px 0px -40px 0px',
+        threshold:   0.08,
+        rootMargin: '0px 0px -60px 0px',
     });
 
-    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -307,37 +330,39 @@ function setupContactForm() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   3D TILT on featured cards
+   3D TILT on cards — subtle, hardware-accelerated
    ═══════════════════════════════════════════════════════════ */
 function setupCardTilt() {
-    document.querySelectorAll('.featured-card, .approach-item, .timeline-content').forEach(card => {
+    document.querySelectorAll('.featured-card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const rect   = card.getBoundingClientRect();
             const x      = e.clientX - rect.left;
             const y      = e.clientY - rect.top;
             const cx     = rect.width  / 2;
             const cy     = rect.height / 2;
-            const rX     = ((y - cy) / cy) * 3;
-            const rY     = ((cx - x) / cx) * 3;
-            card.style.transform = `perspective(800px) rotateX(${rX}deg) rotateY(${rY}deg) translateY(-4px)`;
+            const rX     = ((y - cy) / cy) * 2;
+            const rY     = ((cx - x) / cx) * 2;
+            card.style.transform = `perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg) translateY(-2px)`;
+            card.style.willChange = 'transform';
         });
         card.addEventListener('mouseleave', () => {
             card.style.transform = '';
+            card.style.willChange = '';
         });
     });
 }
 
 /* ═══════════════════════════════════════════════════════════
-   HERO NAME — stagger on load
-   ═══════════════════════════════════════════════════════════ */
+    HERO — stagger on load with blur reveal
+    ═══════════════════════════════════════════════════════════ */
 function setupHeroEntrance() {
-    // Force a small delay so CSS transition fires after render
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-            document.querySelectorAll('[data-animate]').forEach(el => {
-                // Elements in the hero fire immediately (no IO needed)
+            document.querySelectorAll('[data-reveal]').forEach(el => {
                 if (el.closest('.hero')) {
+                    el.classList.add('will-change-pulse');
                     el.classList.add('is-visible');
+                    setTimeout(() => el.classList.remove('will-change-pulse'), 1000);
                 }
             });
         });
@@ -363,17 +388,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme toggle button
     const themeToggle = document.getElementById('themeToggle');
     if (themeToggle) themeToggle.addEventListener('click', cycleTheme);
-
-    // Close mobile menu on outside click
-    document.addEventListener('click', e => {
-        const hamburger  = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        if (!hamburger || !mobileMenu) return;
-        if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-            hamburger.classList.remove('is-open');
-            mobileMenu.classList.remove('is-open');
-            hamburger.setAttribute('aria-expanded', 'false');
-            mobileMenu.setAttribute('aria-hidden',  'true');
-        }
-    });
 });
