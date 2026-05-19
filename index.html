@@ -18,27 +18,22 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="alternate icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 </head>
 <body>
-    <!-- Skip to content for keyboard users -->
     <a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- Custom cursor -->
     <div class="cursor-dot" aria-hidden="true"></div>
     <div class="cursor-ring" aria-hidden="true"></div>
 
-    <!-- Animated grain texture overlay -->
     <div class="grain" aria-hidden="true"></div>
 
-    <!-- Scroll progress indicator -->
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-    <!-- Navigation — Floating Island Pill -->
     <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-inner">
             <a href="#hero" class="nav-logo" aria-label="Go to top">YS</a>
@@ -63,7 +58,6 @@
             </div>
         </div>
 
-        <!-- Mobile full-screen overlay -->
         <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
             <nav class="mobile-links">
                 <a href="#about" class="mobile-link" role="menuitem" style="--i:0">About</a>
@@ -77,7 +71,6 @@
 
     <main id="main">
 
-        <!-- ═══════════════ HERO ═══════════════ -->
         <header id="hero" class="hero">
             <div class="hero-inner">
 
@@ -103,8 +96,7 @@
                 <div class="hero-bottom" data-reveal="fade-up" data-delay="4">
                     <p class="hero-role">Production-First Developer</p>
                     <p class="hero-desc">
-                        Most developers write code. I ship software. Every project is packaged
-                        as a standalone executable — zero setup, immediate execution.
+                        Most developers write fragile scripts that only work in their own local text editors. I ship resilient, complete software applications. From automated open-source operations infrastructure to pre-compiled standalone executables, my work runs instantly right out of the box with zero system setup or installation pain.
                     </p>
                     <div class="hero-cta">
                         <a href="#projects" class="btn btn-primary">
@@ -124,13 +116,13 @@
 
                 <div class="hero-stats" data-reveal="fade-up" data-delay="5">
                     <div class="stat-item">
-                        <span class="stat-num">13+</span>
+                        <span class="stat-num">14+</span>
                         <span class="stat-label">Projects shipped</span>
                     </div>
                     <div class="stat-sep" aria-hidden="true"></div>
                     <div class="stat-item">
-                        <span class="stat-num">68+</span>
-                        <span class="stat-label">DSA problems</span>
+                        <span class="stat-num">OSS</span>
+                        <span class="stat-label">Code Owner</span>
                     </div>
                     <div class="stat-sep" aria-hidden="true"></div>
                     <div class="stat-item">
@@ -139,8 +131,8 @@
                     </div>
                     <div class="stat-sep" aria-hidden="true"></div>
                     <div class="stat-item">
-                        <span class="stat-num">3</span>
-                        <span class="stat-label">Live apps</span>
+                        <span class="stat-num">4</span>
+                        <span class="stat-label">Live production apps</span>
                     </div>
                 </div>
 
@@ -151,7 +143,6 @@
             </div>
         </header>
 
-        <!-- ═══════════════ ABOUT ═══════════════ -->
         <section id="about" class="section approach-section">
             <div class="section-inner">
                 <div class="section-header" data-reveal="fade-up">
@@ -161,10 +152,10 @@
 
                 <div class="about-intro" data-reveal="fade-up" data-delay="1">
                     <p class="about-bio">
-                        B.Tech Cyber Security student at LNCT Bhopal with a passion for building production-ready software. 
-                        I don't just write code — I ship applications that users can actually run without dependency headaches. 
-                        From bundled Java executables to standalone Python binaries and deployed web apps, every project is 
-                        designed for immediate execution.
+                        B.Tech Cyber Security student at LNCT Bhopal with an intense obsession for engineering production-ready software systems. 
+                        I despise dependency hell and configuration friction. Whether managing core release workflows for open-source organizations, 
+                        bundling isolated runtimes for zero-friction desktop applications, or architecting secure client-side search tools, 
+                        I build software that works immediately upon deployment.
                     </p>
                 </div>
 
@@ -193,36 +184,35 @@
                 <div class="approach-grid" data-reveal="fade-up" data-delay="3">
                     <div class="approach-item" data-reveal="fade-up" data-delay="1">
                         <span class="approach-num" aria-hidden="true">01</span>
-                        <h3>Java applications</h3>
-                        <p>Bundled JRE (the runtime environment users need to execute Java programs) for zero-friction <code>.exe</code> execution. No JDK installation required on user machines.</p>
-                        <span class="approach-tag">Just download &amp; run</span>
+                        <h3>Infrastructure automation</h3>
+                        <p>Designing modern CI/CD (Continuous Integration and Continuous Deployment — automated tracking scripts that build, test, and release code instantly when changes are pushed) systems to handle automated versioning, sync release tags, and strictly maintain accurate production history logs.</p>
+                        <span class="approach-tag">Zero manual friction</span>
                     </div>
 
                     <div class="approach-item" data-reveal="fade-up" data-delay="2">
                         <span class="approach-num" aria-hidden="true">02</span>
-                        <h3>Python projects</h3>
-                        <p>Standalone binaries via PyInstaller (a tool that packs Python code and all its dependencies into a single distributable file). No Python interpreter needed on the target machine.</p>
-                        <span class="approach-tag">No dependencies</span>
+                        <h3>Independent execution</h3>
+                        <p>Compiling applications into standalone pre-packaged binaries or bundling dedicated execution runtimes. Users execute the application directly without installing platform-specific developer compilers or runtimes on their machines.</p>
+                        <span class="approach-tag">No local requirements</span>
                     </div>
 
                     <div class="approach-item" data-reveal="fade-up" data-delay="3">
                         <span class="approach-num" aria-hidden="true">03</span>
                         <h3>Security from day one</h3>
-                        <p>Input validation (checking that user data is safe before processing it) and exception handling (intercepting errors before they crash the program) are not afterthoughts — they're built in at the start.</p>
+                        <p>Input validation (checking that user data is structurally safe and clean before running it) and error exception interception are baked natively into the codebase foundations. I prevent runtime crashes and standard technical vulnerabilities before they can appear.</p>
                         <span class="approach-tag">Secure by design</span>
                     </div>
 
                     <div class="approach-item" data-reveal="fade-up" data-delay="4">
                         <span class="approach-num" aria-hidden="true">04</span>
                         <h3>Pattern-based learning</h3>
-                        <p>DSA (Data Structures and Algorithms — the specific ways we organize and process data to solve problems efficiently) learned through pattern recognition, not rote memorization. Striver A2Z curriculum.</p>
+                        <p>DSA (Data Structures and Algorithms — the specific structural ways we organize, track, and manipulate data to solve logic problems quickly) mastered through systematic core structural pattern recognition rather than shallow memorization blocks. Following the Striver A2Z curriculum map.</p>
                         <span class="approach-tag">Efficiency obsessed</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══════════════ PROJECTS ═══════════════ -->
         <section id="projects" class="section projects-section">
             <div class="section-inner">
                 <div class="section-header" data-reveal="fade-up">
@@ -230,35 +220,38 @@
                     <h2 class="section-heading">Featured work</h2>
                 </div>
 
-                <!-- Featured projects -->
                 <div class="featured-block" data-reveal="fade-up" data-delay="1">
-                    <p class="featured-label">Live applications</p>
+                    <p class="featured-label">Live applications &amp; production systems</p>
                     <div class="featured-grid">
                         <article class="card-shell">
                             <div class="card-core">
-                                <div class="featured-card">
-                                    <div class="featured-card-top fc-top-2">
-                                        <div class="fc-live" style="background: rgba(0,0,0,0.6);">
-                                            <span class="live-dot" aria-label="Live"></span>
-                                    CLI Tool
-                                        </div>
-                                        <span class="fc-year">2026</span>
-                                    </div>
-                                    <div class="featured-card-body">
-                                        <span class="fc-type">Open Source · Code Owner</span>
-                                        <h3 class="fc-title">KDM-CLI</h3>
-                                        <p class="fc-desc">Lightweight terminal-based monitor for Kubernetes pods and Docker containers. I took over as Code Owner and engineered the CI/CD (Continuous Integration/Continuous Deployment — automated release pipelines) to auto-update changelogs on every release.</p>
-                                        <div class="fc-tech">
-                                            <span>Node.js</span>
-                                            <span>Docker</span>
-                                            <span>Kubernetes</span>
-                                            <span>CI/CD</span>
-                                        </div>
-                                        <a href="https://kdmcli.app/" target="_blank" rel="noopener noreferrer" class="fc-link">Open website ↗</a>
-                                    </div>
+                            <div class="featured-card">
+                            <div class="featured-card-top fc-top-gitdeep">
+                                <div class="fc-live" style="background: rgba(14, 165, 233, 0.2); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.4);">
+                                    <span class="live-dot" style="background: #38bdf8; box-shadow: 0 0 8px #38bdf8;" aria-label="Production"></span>
+                                    Core System
+                                </div>
+                                <span class="fc-year">2026</span>
+                            </div>
+                            <div class="featured-card-body">
+                                <span class="fc-type">Open Source · Code Owner</span>
+                                <h3 class="fc-title">KDM-CLI</h3>
+                                <p class="fc-desc">Lightweight, terminal-based monitoring tool that actively tracks Kubernetes pods and Docker containers. I joined the organization, took command as Code Owner, and engineered automated CI/CD release workflows that seamlessly handle tag alignment and automatically generate comprehensive changelog versions across every software deployment phase.</p>
+                                <div class="fc-tech">
+                                    <span>Node.js</span>
+                                    <span>Docker</span>
+                                    <span>Kubernetes</span>
+                                    <span>GitHub Actions</span>
+                                </div>
+                                <div class="fc-links-group" style="display: flex; gap: 1rem; margin-top: auto;">
+                                    <a href="https://kdmcli.app/" target="_blank" rel="noopener noreferrer" class="fc-link">Website ↗</a>
+                                    <a href="https://github.com/KDM-cli/kdm-cli" target="_blank" rel="noopener noreferrer" class="fc-link" style="color: var(--text-muted);">Source &amp; Contributions ↗</a>
                                 </div>
                             </div>
+                            </div>
+                        </div>
                         </article>
+
                         <article class="card-shell">
                             <div class="card-core">
                             <div class="featured-card">
@@ -314,30 +307,6 @@
                         <article class="card-shell">
                             <div class="card-core">
                             <div class="featured-card">
-                            <div class="featured-card-top fc-top-1">
-                                <div class="fc-live">
-                                    <span class="live-dot" aria-label="Live"></span>
-                                    Live
-                                </div>
-                                <span class="fc-year">2025</span>
-                            </div>
-                            <div class="featured-card-body">
-                                <span class="fc-type">AI-powered web app</span>
-                                <h3 class="fc-title">CATMATHS</h3>
-                                <p class="fc-desc">Free web application helping students prepare for the CAT quantitative section using AI-generated tests. Deployed via Netlify and Vercel.</p>
-                                <div class="fc-tech">
-                                    <span>Web Tech</span>
-                                    <span>AI</span>
-                                </div>
-                                <a href="https://catmaths.vercel.app/" target="_blank" rel="noopener noreferrer" class="fc-link">Open live demo ↗</a>
-                            </div>
-                            </div>
-                        </div>
-                        </article>
-
-                        <article class="card-shell">
-                            <div class="card-core">
-                            <div class="featured-card">
                             <div class="featured-card-top fc-top-3">
                                 <div class="fc-live">
                                     <span class="live-dot" aria-label="Live"></span>
@@ -362,7 +331,6 @@
                     </div>
                 </div>
 
-                <!-- Editorial project list -->
                 <div class="project-list" data-reveal="fade-up" data-delay="2">
                     <p class="featured-label">All projects</p>
                     <div class="project-list-head" aria-hidden="true">
@@ -374,6 +342,24 @@
 
                     <article class="project-row">
                         <span class="pr-num" aria-hidden="true">01</span>
+                        <div class="pr-info">
+                            <strong class="pr-title">KDM-CLI</strong>
+                            <span class="pr-sub">Core Code Owner. Real-time terminal environment monitor for Docker workloads and Kubernetes pods. Designed automated tag orchestration and release pipeline scripts.</span>
+                        </div>
+                        <div class="pr-stack">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">K8s</span>
+                            <span class="tag">CI/CD</span>
+                        </div>
+                        <span class="pr-type">OSS Infrastructure</span>
+                        <span class="pr-links">
+                            <a href="https://kdmcli.app" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="KDM Live Website">Site ↗</a>
+                            <a href="https://github.com/KDM-cli/kdm-cli" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="KDM Contributions Source">GitHub ↗</a>
+                        </span>
+                    </article>
+
+                    <article class="project-row">
+                        <span class="pr-num" aria-hidden="true">02</span>
                         <div class="pr-info">
                             <strong class="pr-title">GitDeep</strong>
                             <span class="pr-sub">AI GitHub profile analyzer — hirability scoring, SWOT, career slope, buzzword detection, 12 AI providers, zero data storage.</span>
@@ -391,7 +377,7 @@
                     </article>
 
                     <article class="project-row">
-                        <span class="pr-num" aria-hidden="true">02</span>
+                        <span class="pr-num" aria-hidden="true">03</span>
                         <div class="pr-info">
                             <strong class="pr-title">GitIssue</strong>
                             <span class="pr-sub">Cross-repo GitHub issue search. Browse, filter, and sort issues across all of GitHub with label tracking, language filters, and customizable views — entirely client-side.</span>
@@ -410,7 +396,7 @@
                     </article>
 
                     <article class="project-row">
-                        <span class="pr-num" aria-hidden="true">03</span>
+                        <span class="pr-num" aria-hidden="true">04</span>
                         <div class="pr-info">
                             <strong class="pr-title">Hangman in Java</strong>
                             <span class="pr-sub">Production-ready desktop game bundled with its own JRE. Distributed as a Windows .zip executable.</span>
@@ -423,7 +409,7 @@
                     </article>
 
                     <article class="project-row">
-                        <span class="pr-num" aria-hidden="true">04</span>
+                        <span class="pr-num" aria-hidden="true">05</span>
                         <div class="pr-info">
                             <strong class="pr-title">Adaptive Connect 4</strong>
                             <span class="pr-sub">Fully functional Connect 4 game featuring adaptive graphics. Game logic powered by NumPy, rendered using Pygame.</span>
@@ -438,7 +424,7 @@
                     </article>
 
                     <article class="project-row">
-                        <span class="pr-num" aria-hidden="true">05</span>
+                        <span class="pr-num" aria-hidden="true">06</span>
                         <div class="pr-info">
                             <strong class="pr-title">One HTML File Challenge</strong>
                             <span class="pr-sub">Masterclass in minimalist coding — building a functional tool entirely within a single HTML file. Focused on code density and zero external dependencies.</span>
@@ -456,7 +442,7 @@
                     </article>
 
                     <article class="project-row">
-                        <span class="pr-num" aria-hidden="true">06</span>
+                        <span class="pr-num" aria-hidden="true">07</span>
                         <div class="pr-info">
                             <strong class="pr-title">OFE-PRO</strong>
                             <span class="pr-sub">Full-fledged production version with modular architecture. Enhanced UX, optimized performance, and scalable state management.</span>
@@ -474,7 +460,24 @@
                     </article>
 
                     <article class="project-row">
-                        <span class="pr-num" aria-hidden="true">07</span>
+                        <span class="pr-num" aria-hidden="true">08</span>
+                        <div class="pr-info">
+                            <strong class="pr-title">CATMATHS</strong>
+                            <span class="pr-sub">Free web system constructed to help students practice for the CAT quantitative section using automated AI-generated testing templates. Deployed on Vercel platforms.</span>
+                        </div>
+                        <div class="pr-stack">
+                            <span class="tag">Web Tech</span>
+                            <span class="tag">AI</span>
+                        </div>
+                        <span class="pr-type">Live web app</span>
+                        <span class="pr-links">
+                            <a href="https://github.com/Yuvraj-Sarathe/CATMATHS" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="CATMATHS source on GitHub">GitHub ↗</a>
+                            <a href="https://catmaths.vercel.app/" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="CATMATHS live demo">Live ↗</a>
+                        </span>
+                    </article>
+
+                    <article class="project-row">
+                        <span class="pr-num" aria-hidden="true">09</span>
                         <div class="pr-info">
                             <strong class="pr-title">UniSync</strong>
                             <span class="pr-sub">Campus ecosystem platform with AI-powered peer matching. Connects students based on interests and academic goals using Google Gemini for intelligent recommendations.</span>
@@ -489,7 +492,7 @@
                     </article>
 
                     <article class="project-row">
-                        <span class="pr-num" aria-hidden="true">08</span>
+                        <span class="pr-num" aria-hidden="true">10</span>
                         <div class="pr-info">
                             <strong class="pr-title">NeuralPlan</strong>
                             <span class="pr-sub">AI-powered study planner with Vision OCR capabilities. Creates personalized study schedules that adapt to energy levels and learning patterns using Gemini Vision.</span>
@@ -504,7 +507,7 @@
                     </article>
 
                     <article class="project-row">
-                        <span class="pr-num" aria-hidden="true">09</span>
+                        <span class="pr-num" aria-hidden="true">11</span>
                         <div class="pr-info">
                             <strong class="pr-title">Guess the number</strong>
                             <span class="pr-sub">Tkinter GUI, input validation, smart hints, event-driven architecture</span>
@@ -518,7 +521,7 @@
                     </article>
 
                     <article class="project-row">
-                        <span class="pr-num" aria-hidden="true">10</span>
+                        <span class="pr-num" aria-hidden="true">12</span>
                         <div class="pr-info">
                             <strong class="pr-title">Tic-Tac-Toe</strong>
                             <span class="pr-sub">AI opponent, 8-pattern win detection, Windows API colored console</span>
@@ -532,7 +535,7 @@
                     </article>
 
                     <article class="project-row">
-                        <span class="pr-num" aria-hidden="true">11</span>
+                        <span class="pr-num" aria-hidden="true">13</span>
                         <div class="pr-info">
                             <strong class="pr-title">Web development projects</strong>
                             <span class="pr-sub">freeCodeCamp certified, 5 portfolio pieces, fully responsive</span>
@@ -550,7 +553,7 @@
                     </article>
 
                     <article class="project-row">
-                        <span class="pr-num" aria-hidden="true">12</span>
+                        <span class="pr-num" aria-hidden="true">14</span>
                         <div class="pr-info">
                             <strong class="pr-title">DSA practice log</strong>
                             <span class="pr-sub">68 unique solves, 76% acceptance, Striver A2Z curriculum — ongoing</span>
@@ -566,7 +569,6 @@
             </div>
         </section>
 
-        <!-- ═══════════════ SKILLS ═══════════════ -->
         <section id="skills" class="section skills-section">
             <div class="section-inner">
                 <div class="section-header" data-reveal="fade-up">
@@ -578,6 +580,10 @@
                     <div class="skills-col" data-reveal="fade-up" data-delay="1">
                         <h3 class="skills-col-title">Proficient</h3>
                         <ul class="skills-list">
+                            <li>
+                                <strong class="skill-name">CI/CD &amp; Automation</strong>
+                                <span class="skill-note">GitHub Actions infrastructure integration, automated versioning systems, changelog release generation</span>
+                            </li>
                             <li>
                                 <strong class="skill-name">Java</strong>
                                 <span class="skill-note">Standalone executables, 68+ DSA problems, Collections Framework mastery</span>
@@ -595,12 +601,8 @@
                                 <span class="skill-note">Utility-first styling for rapid UI development, modern glassmorphism</span>
                             </li>
                             <li>
-                                <strong class="skill-name">HTML / CSS</strong>
-                                <span class="skill-note">Responsive production-grade interfaces, freeCodeCamp certified</span>
-                            </li>
-                            <li>
-                                <strong class="skill-name">Git</strong>
-                                <span class="skill-note">Daily commit workflow, multi-contributor hackathon projects</span>
+                                <strong class="skill-name">Git &amp; GitHub Operations</strong>
+                                <span class="skill-note">Organization workspace management, cross-contributor review cycles, Code Owner maintenance</span>
                             </li>
                         </ul>
                     </div>
@@ -609,20 +611,20 @@
                         <h3 class="skills-col-title">Familiar</h3>
                         <ul class="skills-list">
                             <li>
-                                <strong class="skill-name">JavaScript</strong>
-                                <span class="skill-note">DOM manipulation, event handling, form validation in production</span>
+                                <strong class="skill-name">Docker &amp; Containers</strong>
+                                <span class="skill-note">Containerized configuration tracking, run execution lifecycle monitoring</span>
                             </li>
                             <li>
-                                <strong class="skill-name">C++</strong>
-                                <span class="skill-note">Console applications, Windows API, game logic</span>
+                                <strong class="skill-name">Kubernetes</strong>
+                                <span class="skill-note">Cluster orchestration workload status analysis, basic pod environment tracking</span>
                             </li>
                             <li>
-                                <strong class="skill-name">Gemini API</strong>
-                                <span class="skill-note">AI integration, Vision OCR, intelligent recommendations</span>
+                                <strong class="skill-name">Node.js</strong>
+                                <span class="skill-note">Terminal script utilities, asynchronous command systems, package integration</span>
                             </li>
                             <li>
-                                <strong class="skill-name">Linux CLI</strong>
-                                <span class="skill-note">Package management, shell scripting, file operations</span>
+                                <strong class="skill-name">JavaScript / C++</strong>
+                                <span class="skill-note">DOM environment manipulation, console logic scripts, basic native operating systems API controls</span>
                             </li>
                         </ul>
                     </div>
@@ -631,20 +633,16 @@
                         <h3 class="skills-col-title">Expanding in 2026</h3>
                         <ul class="skills-list">
                             <li>
-                                <strong class="skill-name">Flask</strong>
-                                <span class="skill-note">REST API development, backend systems</span>
+                                <strong class="skill-name">Flask &amp; Backend Design</strong>
+                                <span class="skill-note">REST API construction, backend server structures</span>
                             </li>
                             <li>
-                                <strong class="skill-name">SQL</strong>
-                                <span class="skill-note">Database design, query optimization for full-stack apps</span>
+                                <strong class="skill-name">SQL Database Design</strong>
+                                <span class="skill-note">Relational tables structure, query optimization routines</span>
                             </li>
                             <li>
-                                <strong class="skill-name">Docker</strong>
-                                <span class="skill-note">Containerization for consistent deployment environments</span>
-                            </li>
-                            <li>
-                                <strong class="skill-name">Next.js</strong>
-                                <span class="skill-note">Full-stack React framework, server-side rendering</span>
+                                <strong class="skill-name">Next.js Architecture</strong>
+                                <span class="skill-note">Full-stack server-side processing, framework routing</span>
                             </li>
                         </ul>
                     </div>
@@ -652,7 +650,6 @@
             </div>
         </section>
 
-        <!-- ═══════════════ CERTIFICATES ═══════════════ -->
         <section id="certificates" class="section certificates-section">
             <div class="section-inner">
                 <div class="section-header" data-reveal="fade-up">
@@ -729,7 +726,6 @@
             </div>
         </section>
 
-        <!-- ═══════════════ CONTACT ═══════════════ -->
         <section id="contact" class="section contact-section">
             <div class="section-inner">
                 <div class="section-header" data-reveal="fade-up">
@@ -818,7 +814,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-left">
@@ -836,7 +831,6 @@
         </div>
     </footer>
 
-    <!-- Back to top -->
     <a href="#hero" class="back-top" id="backTop" aria-label="Back to top" hidden>↑</a>
 
     <script src="script.js"></script>
