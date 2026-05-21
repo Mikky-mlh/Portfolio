@@ -22,13 +22,11 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="alternate icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body data-od-id="body">
     <a href="#main" class="skip-link" data-od-id="skip-link">Skip to content</a>
-
-    <div class="cursor-dot" aria-hidden="true" data-od-id="cursor-dot"></div>
-    <div class="cursor-ring" aria-hidden="true" data-od-id="cursor-ring"></div>
 
     <div class="grain" aria-hidden="true" data-od-id="grain"></div>
 
@@ -77,10 +75,9 @@
             <div class="hero-inner" data-od-id="hero-inner">
 
                 <div class="hero-eyebrow" data-reveal="fade-up" data-od-id="hero-eyebrow">
-                    <span class="status-pulse" aria-label="Currently available" data-od-id="status-pulse"></span>
                     <span class="status-text" data-od-id="status-text">Available for internships &amp; collaborations</span>
                     <span class="hero-meta" data-od-id="hero-meta">
-                        <span data-od-id="hero-meta-degree">B.Tech Cyber Security</span>
+                        <span class="hero-meta-bold" data-od-id="hero-meta-degree">B.Tech Cyber Security</span>
                         <span class="dot-sep" aria-hidden="true" data-od-id="dot-sep-1">·</span>
                         <span data-od-id="hero-meta-college">LNCT Bhopal</span>
                         <span class="dot-sep" aria-hidden="true" data-od-id="dot-sep-2">·</span>
@@ -142,10 +139,6 @@
                     </div>
                 </div>
 
-            </div>
-            <div class="hero-scroll-hint" aria-hidden="true" data-od-id="hero-scroll-hint">
-                <span class="scroll-hint-line" data-od-id="scroll-hint-line"></span>
-                <span class="scroll-hint-text" data-od-id="scroll-hint-text">scroll</span>
             </div>
         </header>
 
@@ -233,8 +226,7 @@
                             <div class="card-core" data-od-id="card-kdm-core">
                             <div class="featured-card" data-od-id="featured-card-kdm">
                             <div class="featured-card-top fc-top-gitdeep" data-od-id="fc-top-kdm">
-                                <div class="fc-live" style="background: rgba(14, 165, 233, 0.2); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.4);" data-od-id="fc-live-kdm">
-                                    <span class="live-dot" style="background: #38bdf8; box-shadow: 0 0 8px #38bdf8;" aria-label="Production" data-od-id="live-dot-kdm"></span>
+                                <div class="fc-live fc-live-core" data-od-id="fc-live-kdm">
                                     Core System
                                 </div>
                                 <span class="fc-year" data-od-id="fc-year-kdm">2026</span>
@@ -249,7 +241,8 @@
                                     <span data-od-id="fc-tech-kdm-3">Kubernetes</span>
                                     <span data-od-id="fc-tech-kdm-4">GitHub Actions</span>
                                 </div>
-                                <div class="fc-links-group" style="display: flex; gap: 1rem; margin-top: auto;" data-od-id="fc-links-kdm">
+                                <div class="fc-links-group" style="display: flex; gap: 1rem; margin-top: auto; flex-wrap: wrap;" data-od-id="fc-links-kdm">
+                                    <a href="screens/kdm-cli.html" class="fc-link" data-od-id="fc-link-kdm-details">Case Study →</a>
                                     <a href="https://kdmcli.app/" target="_blank" rel="noopener noreferrer" class="fc-link" data-od-id="fc-link-kdm-site">Website ↗</a>
                                     <a href="https://github.com/KDM-cli/kdm-cli" target="_blank" rel="noopener noreferrer" class="fc-link" style="color: var(--text-muted);" data-od-id="fc-link-kdm-source">Source &amp; Contributions ↗</a>
                                 </div>
@@ -263,7 +256,6 @@
                             <div class="featured-card" data-od-id="featured-card-gitdeep">
                             <div class="featured-card-top fc-top-gitdeep" data-od-id="fc-top-gitdeep">
                                 <div class="fc-live" data-od-id="fc-live-gitdeep">
-                                    <span class="live-dot" aria-label="Live" data-od-id="live-dot-gitdeep"></span>
                                     Live
                                 </div>
                                 <span class="fc-year" data-od-id="fc-year-gitdeep">2025</span>
@@ -278,6 +270,7 @@
                                     <span data-od-id="fc-tech-gitdeep-3">Tailwind v4</span>
                                     <span data-od-id="fc-tech-gitdeep-4">Recharts</span>
                                 </div>
+                                <a href="screens/gitdeep.html" class="fc-link" data-od-id="fc-link-gitdeep-details">Case Study →</a>
                                 <a href="https://gitdeep.vercel.app/" target="_blank" rel="noopener noreferrer" class="fc-link" data-od-id="fc-link-gitdeep">Open live demo ↗</a>
                             </div>
                             </div>
@@ -289,7 +282,6 @@
                             <div class="featured-card" data-od-id="featured-card-gitissue">
                             <div class="featured-card-top fc-top-gitissue" data-od-id="fc-top-gitissue">
                                 <div class="fc-live" data-od-id="fc-live-gitissue">
-                                    <span class="live-dot" aria-label="Live" data-od-id="live-dot-gitissue"></span>
                                     Live
                                 </div>
                                 <span class="fc-year" data-od-id="fc-year-gitissue">2026</span>
@@ -304,6 +296,7 @@
                                     <span data-od-id="fc-tech-gitissue-3">Tailwind</span>
                                     <span data-od-id="fc-tech-gitissue-4">GitHub API</span>
                                 </div>
+                                <a href="screens/gitissue.html" class="fc-link" data-od-id="fc-link-gitissue-details">Case Study →</a>
                                 <a href="https://gitissue.vercel.app/" target="_blank" rel="noopener noreferrer" class="fc-link" data-od-id="fc-link-gitissue">Open live demo ↗</a>
                             </div>
                             </div>
@@ -315,7 +308,6 @@
                             <div class="featured-card" data-od-id="featured-card-ofe">
                             <div class="featured-card-top fc-top-3" data-od-id="fc-top-ofe">
                                 <div class="fc-live" data-od-id="fc-live-ofe">
-                                    <span class="live-dot" aria-label="Live" data-od-id="live-dot-ofe"></span>
                                     Live
                                 </div>
                                 <span class="fc-year" data-od-id="fc-year-ofe">2025</span>
@@ -337,72 +329,49 @@
                     </div>
                 </div>
 
-                <div class="project-list" data-reveal="fade-up" data-delay="2" data-od-id="project-list">
-                    <p class="featured-label" data-od-id="project-list-label">All projects</p>
+                <p class="featured-label" data-od-id="project-list-label" data-reveal="fade-up" data-delay="2"><span class="fl-badge" aria-hidden="true">✦</span> Other Projects</p>
+
+                <div class="project-list" data-reveal="fade-up" data-delay="3" data-od-id="project-list">
                     <div class="project-list-head" aria-hidden="true" data-od-id="project-list-head">
                         <span data-od-id="plh-title">Title</span>
                         <span data-od-id="plh-stack">Stack</span>
-                        <span data-od-id="plh-type">Type</span>
                         <span data-od-id="plh-link">Link</span>
                     </div>
 
-                    <article class="project-row" data-od-id="pr-01">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-01">01</span>
-                        <div class="pr-info" data-od-id="pr-info-01">
-                            <strong class="pr-title" data-od-id="pr-title-01">KDM-CLI</strong>
-                            <span class="pr-sub" data-od-id="pr-sub-01">Core Code Owner. Real-time terminal environment monitor for Docker workloads and Kubernetes pods. Designed automated tag orchestration and release pipeline scripts.</span>
+                    <article class="project-row" data-od-id="pr-08">
+                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-08">01</span>
+                        <div class="pr-info" data-od-id="pr-info-08">
+                            <strong class="pr-title" data-od-id="pr-title-08">CATMATHS</strong>
+                            <span class="pr-sub" data-od-id="pr-sub-08">Free web system constructed to help students practice for the CAT quantitative section using automated AI-generated testing templates. Deployed on Vercel platforms.</span>
                         </div>
-                        <div class="pr-stack" data-od-id="pr-stack-01">
-                            <span class="tag" data-od-id="tag-01-1">Node.js</span>
-                            <span class="tag" data-od-id="tag-01-2">K8s</span>
-                            <span class="tag" data-od-id="tag-01-3">CI/CD</span>
+                        <div class="pr-stack" data-od-id="pr-stack-08">
+                            <span class="tag" data-od-id="tag-08-1">Web Tech</span>
+                            <span class="tag" data-od-id="tag-08-2">AI</span>
                         </div>
-                        <span class="pr-type" data-od-id="pr-type-01">OSS Infrastructure</span>
-                        <span class="pr-links" data-od-id="pr-links-01">
-                            <a href="https://kdmcli.app" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="KDM Live Website" data-od-id="pr-link-01-site">Site ↗</a>
-                            <a href="https://github.com/KDM-cli/kdm-cli" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="KDM Contributions Source" data-od-id="pr-link-01-source">GitHub ↗</a>
+                        <span class="pr-links" data-od-id="pr-links-08">
+                            <a href="https://github.com/Yuvraj-Sarathe/CATMATHS" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="CATMATHS source on GitHub" data-od-id="pr-link-08-source">GitHub ↗</a>
+                            <a href="https://catmaths.vercel.app/" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="CATMATHS live demo" data-od-id="pr-link-08-live">Live ↗</a>
                         </span>
                     </article>
 
-                    <article class="project-row" data-od-id="pr-02">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-02">02</span>
-                        <div class="pr-info" data-od-id="pr-info-02">
-                            <strong class="pr-title" data-od-id="pr-title-02">GitDeep</strong>
-                            <span class="pr-sub" data-od-id="pr-sub-02">AI GitHub profile analyzer — hirability scoring, SWOT, career slope, buzzword detection, 12 AI providers, zero data storage.</span>
+                    <article class="project-row" data-od-id="pr-09">
+                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-09">02</span>
+                        <div class="pr-info" data-od-id="pr-info-09">
+                            <strong class="pr-title" data-od-id="pr-title-09">FlowForge</strong>
+                            <span class="pr-sub" data-od-id="pr-sub-09">Streamlined todo application with Firebase backend and Google Login authentication. Real-time sync, clean UI, and cross-device access.</span>
                         </div>
-                        <div class="pr-stack" data-od-id="pr-stack-02">
-                            <span class="tag" data-od-id="tag-02-1">Next.js</span>
-                            <span class="tag" data-od-id="tag-02-2">TypeScript</span>
-                            <span class="tag" data-od-id="tag-02-3">Tailwind</span>
+                        <div class="pr-stack" data-od-id="pr-stack-09">
+                            <span class="tag" data-od-id="tag-09-1">Firebase</span>
+                            <span class="tag" data-od-id="tag-09-2">Google Auth</span>
+                            <span class="tag" data-od-id="tag-09-3">JavaScript</span>
                         </div>
-                        <span class="pr-type" data-od-id="pr-type-02">Live web app</span>
-                        <span class="pr-links" data-od-id="pr-links-02">
-                            <a href="https://gitdeep.vercel.app" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="GitDeep live demo" data-od-id="pr-link-02-live">Live ↗</a>
-                            <a href="https://github.com/Yuvraj-Sarathe/GitDeep" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="GitDeep source" data-od-id="pr-link-02-source">GitHub ↗</a>
-                        </span>
-                    </article>
-
-                    <article class="project-row" data-od-id="pr-03">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-03">03</span>
-                        <div class="pr-info" data-od-id="pr-info-03">
-                            <strong class="pr-title" data-od-id="pr-title-03">GitIssue</strong>
-                            <span class="pr-sub" data-od-id="pr-sub-03">Cross-repo GitHub issue search. Browse, filter, and sort issues across all of GitHub with label tracking, language filters, and customizable views — entirely client-side.</span>
-                        </div>
-                        <div class="pr-stack" data-od-id="pr-stack-03">
-                            <span class="tag" data-od-id="tag-03-1">Next.js</span>
-                            <span class="tag" data-od-id="tag-03-2">TypeScript</span>
-                            <span class="tag" data-od-id="tag-03-3">Tailwind</span>
-                            <span class="tag" data-od-id="tag-03-4">GitHub API</span>
-                        </div>
-                        <span class="pr-type" data-od-id="pr-type-03">Live web app</span>
-                        <span class="pr-links" data-od-id="pr-links-03">
-                            <a href="https://gitissue.vercel.app" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="GitIssue live demo" data-od-id="pr-link-03-live">Live ↗</a>
-                            <a href="https://github.com/Yuvraj-Sarathe/Git-Issue" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="GitIssue source" data-od-id="pr-link-03-source">GitHub ↗</a>
+                        <span class="pr-links" data-od-id="pr-links-09">
+                            <a href="https://github.com/Yuvraj-Sarathe" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="FlowForge source on GitHub" data-od-id="pr-link-09-source">GitHub ↗</a>
                         </span>
                     </article>
 
                     <article class="project-row" data-od-id="pr-04">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-04">04</span>
+                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-04">03</span>
                         <div class="pr-info" data-od-id="pr-info-04">
                             <strong class="pr-title" data-od-id="pr-title-04">Hangman in Java</strong>
                             <span class="pr-sub" data-od-id="pr-sub-04">Production-ready desktop game bundled with its own JRE. Distributed as a Windows .zip executable.</span>
@@ -410,12 +379,11 @@
                         <div class="pr-stack" data-od-id="pr-stack-04">
                             <span class="tag" data-od-id="tag-04-1">Java</span>
                         </div>
-                        <span class="pr-type" data-od-id="pr-type-04">Standalone .exe</span>
                         <a href="https://github.com/Yuvraj-Sarathe/Hangman-in-Java" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="Hangman game source on GitHub" data-od-id="pr-link-04">GitHub ↗</a>
                     </article>
 
                     <article class="project-row" data-od-id="pr-05">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-05">05</span>
+                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-05">04</span>
                         <div class="pr-info" data-od-id="pr-info-05">
                             <strong class="pr-title" data-od-id="pr-title-05">Adaptive Connect 4</strong>
                             <span class="pr-sub" data-od-id="pr-sub-05">Fully functional Connect 4 game featuring adaptive graphics. Game logic powered by NumPy, rendered using Pygame.</span>
@@ -425,12 +393,11 @@
                             <span class="tag" data-od-id="tag-05-2">Pygame</span>
                             <span class="tag" data-od-id="tag-05-3">NumPy</span>
                         </div>
-                        <span class="pr-type" data-od-id="pr-type-05">Standalone binary</span>
                         <a href="https://github.com/Yuvraj-Sarathe/Connect4-in-Python" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="Connect Four source on GitHub" data-od-id="pr-link-05">GitHub ↗</a>
                     </article>
 
                     <article class="project-row" data-od-id="pr-06">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-06">06</span>
+                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-06">05</span>
                         <div class="pr-info" data-od-id="pr-info-06">
                             <strong class="pr-title" data-od-id="pr-title-06">One HTML File Challenge</strong>
                             <span class="pr-sub" data-od-id="pr-sub-06">Masterclass in minimalist coding — building a functional tool entirely within a single HTML file. Focused on code density and zero external dependencies.</span>
@@ -440,136 +407,94 @@
                             <span class="tag" data-od-id="tag-06-2">CSS</span>
                             <span class="tag" data-od-id="tag-06-3">JavaScript</span>
                         </div>
-                        <span class="pr-type" data-od-id="pr-type-06">Single-file web app</span>
                         <span class="pr-links" data-od-id="pr-links-06">
                             <a href="https://github.com/Yuvraj-Sarathe/OFE" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="OFE source on GitHub" data-od-id="pr-link-06-source">GitHub ↗</a>
                             <a href="https://Yuvraj-Sarathe.github.io/OFE/" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="OFE live demo" data-od-id="pr-link-06-live">Live ↗</a>
                         </span>
                     </article>
 
-                    <article class="project-row" data-od-id="pr-07">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-07">07</span>
-                        <div class="pr-info" data-od-id="pr-info-07">
-                            <strong class="pr-title" data-od-id="pr-title-07">OFE-PRO</strong>
-                            <span class="pr-sub" data-od-id="pr-sub-07">Full-fledged production version with modular architecture. Enhanced UX, optimized performance, and scalable state management.</span>
-                        </div>
-                        <div class="pr-stack" data-od-id="pr-stack-07">
-                            <span class="tag" data-od-id="tag-07-1">React</span>
-                            <span class="tag" data-od-id="tag-07-2">TypeScript</span>
-                            <span class="tag" data-od-id="tag-07-3">Tailwind CSS</span>
-                        </div>
-                        <span class="pr-type" data-od-id="pr-type-07">Web application</span>
-                        <span class="pr-links" data-od-id="pr-links-07">
-                            <a href="https://github.com/Yuvraj-Sarathe/OFE-PRO" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="OFE-PRO source on GitHub" data-od-id="pr-link-07-source">GitHub ↗</a>
-                            <a href="https://ofe-pro.vercel.app/" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="OFE-PRO live demo" data-od-id="pr-link-07-live">Live ↗</a>
-                        </span>
-                    </article>
-
-                    <article class="project-row" data-od-id="pr-08">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-08">08</span>
-                        <div class="pr-info" data-od-id="pr-info-08">
-                            <strong class="pr-title" data-od-id="pr-title-08">CATMATHS</strong>
-                            <span class="pr-sub" data-od-id="pr-sub-08">Free web system constructed to help students practice for the CAT quantitative section using automated AI-generated testing templates. Deployed on Vercel platforms.</span>
-                        </div>
-                        <div class="pr-stack" data-od-id="pr-stack-08">
-                            <span class="tag" data-od-id="tag-08-1">Web Tech</span>
-                            <span class="tag" data-od-id="tag-08-2">AI</span>
-                        </div>
-                        <span class="pr-type" data-od-id="pr-type-08">Live web app</span>
-                        <span class="pr-links" data-od-id="pr-links-08">
-                            <a href="https://github.com/Yuvraj-Sarathe/CATMATHS" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="CATMATHS source on GitHub" data-od-id="pr-link-08-source">GitHub ↗</a>
-                            <a href="https://catmaths.vercel.app/" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="CATMATHS live demo" data-od-id="pr-link-08-live">Live ↗</a>
-                        </span>
-                    </article>
-
-                    <article class="project-row" data-od-id="pr-09">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-09">09</span>
-                        <div class="pr-info" data-od-id="pr-info-09">
-                            <strong class="pr-title" data-od-id="pr-title-09">UniSync</strong>
-                            <span class="pr-sub" data-od-id="pr-sub-09">Campus ecosystem platform with AI-powered peer matching. Connects students based on interests and academic goals using Google Gemini for intelligent recommendations.</span>
-                        </div>
-                        <div class="pr-stack" data-od-id="pr-stack-09">
-                            <span class="tag" data-od-id="tag-09-1">Streamlit</span>
-                            <span class="tag" data-od-id="tag-09-2">Gemini AI</span>
-                            <span class="tag" data-od-id="tag-09-3">Python</span>
-                        </div>
-                        <span class="pr-type" data-od-id="pr-type-09">Hackathon project</span>
-                        <a href="https://github.com/Yuvraj-Sarathe/Unisync" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="UniSync source on GitHub" data-od-id="pr-link-09">GitHub ↗</a>
-                    </article>
-
                     <article class="project-row" data-od-id="pr-10">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-10">10</span>
+                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-10">06</span>
                         <div class="pr-info" data-od-id="pr-info-10">
-                            <strong class="pr-title" data-od-id="pr-title-10">NeuralPlan</strong>
-                            <span class="pr-sub" data-od-id="pr-sub-10">AI-powered study planner with Vision OCR capabilities. Creates personalized study schedules that adapt to energy levels and learning patterns using Gemini Vision.</span>
+                            <strong class="pr-title" data-od-id="pr-title-10">UniSync</strong>
+                            <span class="pr-sub" data-od-id="pr-sub-10">Campus ecosystem platform with AI-powered peer matching. Connects students based on interests and academic goals using Google Gemini for intelligent recommendations.</span>
                         </div>
                         <div class="pr-stack" data-od-id="pr-stack-10">
                             <span class="tag" data-od-id="tag-10-1">Streamlit</span>
-                            <span class="tag" data-od-id="tag-10-2">Vision OCR</span>
-                            <span class="tag" data-od-id="tag-10-3">Gemini AI</span>
+                            <span class="tag" data-od-id="tag-10-2">Gemini AI</span>
+                            <span class="tag" data-od-id="tag-10-3">Python</span>
                         </div>
-                        <span class="pr-type" data-od-id="pr-type-10">Hackathon project</span>
-                        <a href="https://github.com/Yuvraj-Sarathe/NeuralPlan" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="NeuralPlan source on GitHub" data-od-id="pr-link-10">GitHub ↗</a>
+                        <a href="https://github.com/Yuvraj-Sarathe/Unisync" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="UniSync source on GitHub" data-od-id="pr-link-10">GitHub ↗</a>
                     </article>
 
                     <article class="project-row" data-od-id="pr-11">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-11">11</span>
+                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-11">07</span>
                         <div class="pr-info" data-od-id="pr-info-11">
-                            <strong class="pr-title" data-od-id="pr-title-11">Guess the number</strong>
-                            <span class="pr-sub" data-od-id="pr-sub-11">Tkinter GUI, input validation, smart hints, event-driven architecture</span>
+                            <strong class="pr-title" data-od-id="pr-title-11">NeuralPlan</strong>
+                            <span class="pr-sub" data-od-id="pr-sub-11">AI-powered study planner with Vision OCR capabilities. Creates personalized study schedules that adapt to energy levels and learning patterns using Gemini Vision.</span>
                         </div>
                         <div class="pr-stack" data-od-id="pr-stack-11">
-                            <span class="tag" data-od-id="tag-11-1">Python</span>
-                            <span class="tag" data-od-id="tag-11-2">Tkinter</span>
+                            <span class="tag" data-od-id="tag-11-1">Streamlit</span>
+                            <span class="tag" data-od-id="tag-11-2">Vision OCR</span>
+                            <span class="tag" data-od-id="tag-11-3">Gemini AI</span>
                         </div>
-                        <span class="pr-type" data-od-id="pr-type-11">GUI application</span>
-                        <a href="https://github.com/Yuvraj-Sarathe/GuessTheNumberGame" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="Guess the Number source on GitHub" data-od-id="pr-link-11">GitHub ↗</a>
+                        <a href="https://github.com/Yuvraj-Sarathe/NeuralPlan" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="NeuralPlan source on GitHub" data-od-id="pr-link-11">GitHub ↗</a>
                     </article>
 
                     <article class="project-row" data-od-id="pr-12">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-12">12</span>
+                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-12">08</span>
                         <div class="pr-info" data-od-id="pr-info-12">
-                            <strong class="pr-title" data-od-id="pr-title-12">Tic-Tac-Toe</strong>
-                            <span class="pr-sub" data-od-id="pr-sub-12">AI opponent, 8-pattern win detection, Windows API colored console</span>
+                            <strong class="pr-title" data-od-id="pr-title-12">Guess the number</strong>
+                            <span class="pr-sub" data-od-id="pr-sub-12">Tkinter GUI, input validation, smart hints, event-driven architecture</span>
                         </div>
                         <div class="pr-stack" data-od-id="pr-stack-12">
-                            <span class="tag" data-od-id="tag-12-1">C++</span>
-                            <span class="tag" data-od-id="tag-12-2">Windows API</span>
+                            <span class="tag" data-od-id="tag-12-1">Python</span>
+                            <span class="tag" data-od-id="tag-12-2">Tkinter</span>
                         </div>
-                        <span class="pr-type" data-od-id="pr-type-12">Console game</span>
-                        <a href="https://github.com/Yuvraj-Sarathe/Tic-Tac-Toe-in-CPP" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="Tic-Tac-Toe source on GitHub" data-od-id="pr-link-12">GitHub ↗</a>
+                        <a href="https://github.com/Yuvraj-Sarathe/GuessTheNumberGame" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="Guess the Number source on GitHub" data-od-id="pr-link-12">GitHub ↗</a>
                     </article>
 
                     <article class="project-row" data-od-id="pr-13">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-13">13</span>
+                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-13">09</span>
                         <div class="pr-info" data-od-id="pr-info-13">
-                            <strong class="pr-title" data-od-id="pr-title-13">Web development projects</strong>
-                            <span class="pr-sub" data-od-id="pr-sub-13">freeCodeCamp certified, 5 portfolio pieces, fully responsive</span>
+                            <strong class="pr-title" data-od-id="pr-title-13">Tic-Tac-Toe</strong>
+                            <span class="pr-sub" data-od-id="pr-sub-13">AI opponent, 8-pattern win detection, Windows API colored console</span>
                         </div>
                         <div class="pr-stack" data-od-id="pr-stack-13">
-                            <span class="tag" data-od-id="tag-13-1">HTML</span>
-                            <span class="tag" data-od-id="tag-13-2">CSS</span>
-                            <span class="tag" data-od-id="tag-13-3">JavaScript</span>
+                            <span class="tag" data-od-id="tag-13-1">C++</span>
+                            <span class="tag" data-od-id="tag-13-2">Windows API</span>
                         </div>
-                        <span class="pr-type" data-od-id="pr-type-13">Web collection</span>
-                        <span class="pr-links" data-od-id="pr-links-13">
-                            <a href="https://github.com/Yuvraj-Sarathe/Web-Projects" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="Web Projects source on GitHub" data-od-id="pr-link-13-source">GitHub ↗</a>
-                            <a href="https://Yuvraj-Sarathe.github.io/Web-Projects/" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="Web Projects live demo" data-od-id="pr-link-13-live">Live ↗</a>
-                        </span>
+                        <a href="https://github.com/Yuvraj-Sarathe/Tic-Tac-Toe-in-CPP" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="Tic-Tac-Toe source on GitHub" data-od-id="pr-link-13">GitHub ↗</a>
                     </article>
 
                     <article class="project-row" data-od-id="pr-14">
-                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-14">14</span>
+                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-14">10</span>
                         <div class="pr-info" data-od-id="pr-info-14">
-                            <strong class="pr-title" data-od-id="pr-title-14">DSA practice log</strong>
-                            <span class="pr-sub" data-od-id="pr-sub-14">68 unique solves, 76% acceptance, Striver A2Z curriculum — ongoing</span>
+                            <strong class="pr-title" data-od-id="pr-title-14">Web development projects</strong>
+                            <span class="pr-sub" data-od-id="pr-sub-14">freeCodeCamp certified, 5 portfolio pieces, fully responsive</span>
                         </div>
                         <div class="pr-stack" data-od-id="pr-stack-14">
-                            <span class="tag" data-od-id="tag-14-1">Java</span>
-                            <span class="tag" data-od-id="tag-14-2">Algorithms</span>
+                            <span class="tag" data-od-id="tag-14-1">HTML</span>
+                            <span class="tag" data-od-id="tag-14-2">CSS</span>
+                            <span class="tag" data-od-id="tag-14-3">JavaScript</span>
                         </div>
-                        <span class="pr-type" data-od-id="pr-type-14">Ongoing</span>
-                        <a href="https://leetcode.com/u/Yuvraj_Sarathe/" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="LeetCode profile" data-od-id="pr-link-14">LeetCode ↗</a>
+                        <span class="pr-links" data-od-id="pr-links-14">
+                            <a href="https://github.com/Yuvraj-Sarathe/Web-Projects" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="Web Projects source on GitHub" data-od-id="pr-link-14-source">GitHub ↗</a>
+                            <a href="https://Yuvraj-Sarathe.github.io/Web-Projects/" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="Web Projects live demo" data-od-id="pr-link-14-live">Live ↗</a>
+                        </span>
+                    </article>
+
+                    <article class="project-row" data-od-id="pr-15">
+                        <span class="pr-num" aria-hidden="true" data-od-id="pr-num-15">11</span>
+                        <div class="pr-info" data-od-id="pr-info-15">
+                            <strong class="pr-title" data-od-id="pr-title-15">DSA practice log</strong>
+                            <span class="pr-sub" data-od-id="pr-sub-15">68 unique solves, 76% acceptance, Striver A2Z curriculum — ongoing</span>
+                        </div>
+                        <div class="pr-stack" data-od-id="pr-stack-15">
+                            <span class="tag" data-od-id="tag-15-1">Java</span>
+                            <span class="tag" data-od-id="tag-15-2">Algorithms</span>
+                        </div>
+                        <a href="https://leetcode.com/u/Yuvraj_Sarathe/" target="_blank" rel="noopener noreferrer" class="pr-link" aria-label="LeetCode profile" data-od-id="pr-link-15">LeetCode ↗</a>
                     </article>
                 </div>
             </div>
@@ -845,5 +770,6 @@
     <a href="#hero" class="back-top" id="backTop" aria-label="Back to top" hidden data-od-id="back-top">↑</a>
 
     <script src="script.js"></script>
+    <script src="cursor-trail.js"></script>
 </body>
 </html>

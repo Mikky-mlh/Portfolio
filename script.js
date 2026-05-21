@@ -40,73 +40,6 @@ function cycleTheme() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   CUSTOM CURSOR
-   ═══════════════════════════════════════════════════════════ */
-const cursorDot  = document.querySelector('.cursor-dot');
-const cursorRing = document.querySelector('.cursor-ring');
-
-let mouseX = 0, mouseY = 0;
-let ringX  = 0, ringY  = 0;
-let rafId  = null;
-
-function onMouseMove(e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    if (cursorDot) {
-        cursorDot.style.left = mouseX + 'px';
-        cursorDot.style.top  = mouseY + 'px';
-    }
-}
-
-function animateRing() {
-    if (cursorRing) {
-        ringX += (mouseX - ringX) * 0.1;
-        ringY += (mouseY - ringY) * 0.1;
-        cursorRing.style.left = ringX + 'px';
-        cursorRing.style.top  = ringY + 'px';
-    }
-    rafId = requestAnimationFrame(animateRing);
-}
-
-function onMouseLeave() {
-    if (cursorDot)  cursorDot.style.opacity  = '0';
-    if (cursorRing) cursorRing.style.opacity = '0';
-}
-function onMouseEnter() {
-    if (cursorDot)  cursorDot.style.opacity  = '1';
-    if (cursorRing) cursorRing.style.opacity = '0.5';
-}
-
-function onMouseDown() {
-    if (cursorRing) cursorRing.classList.add('is-clicking');
-}
-function onMouseUp() {
-    if (cursorRing) cursorRing.classList.remove('is-clicking');
-}
-
-function setupCursor() {
-    if (!cursorDot || !cursorRing) return;
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseleave', onMouseLeave);
-    document.addEventListener('mouseenter', onMouseEnter);
-    document.addEventListener('mousedown', onMouseDown);
-    document.addEventListener('mouseup', onMouseUp);
-    animateRing();
-
-    const interactives = document.querySelectorAll('a, button, .approach-item, .featured-card, .project-row, .contact-link, .back-top, .theme-btn');
-    interactives.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursorDot.classList.add('is-hovering');
-            cursorRing.classList.add('is-hovering');
-        });
-        el.addEventListener('mouseleave', () => {
-            cursorDot.classList.remove('is-hovering');
-            cursorRing.classList.remove('is-hovering');
-        });
-    });
-}
-
-/* ═══════════════════════════════════════════════════════════
    SCROLL PROGRESS BAR
    ═══════════════════════════════════════════════════════════ */
 function setupScrollProgress() {
@@ -330,31 +263,99 @@ function setupContactForm() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   3D TILT on cards — subtle, hardware-accelerated
+   CLICKSPARK — animated sparks on click (port of React Bits)
    ═══════════════════════════════════════════════════════════ */
-function setupCardTilt() {
-    document.querySelectorAll('.featured-card').forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const rect   = card.getBoundingClientRect();
-            const x      = e.clientX - rect.left;
-            const y      = e.clientY - rect.top;
-            const cx     = rect.width  / 2;
-            const cy     = rect.height / 2;
-            const rX     = ((y - cy) / cy) * 2;
-            const rY     = ((cx - x) / cx) * 2;
-            card.style.transform = `perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg) translateY(-2px)`;
-            card.style.willChange = 'transform';
+function setupClickSpark() {
+    const canvas = document.createElement('canvas');
+    canvas.className = 'click-spark-canvas';
+    canvas.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    let sparks = [];
+    let raf;
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function getAccentColor() {
+        const style = getComputedStyle(document.documentElement);
+        return style.getPropertyValue('--accent').trim() || '#e8704a';
+    }
+
+    function handleClick(e) {
+        const sparkColor = getAccentColor();
+        const sparkCount = 8;
+        const sparkSize = 10;
+        const sparkRadius = 15;
+        const duration = 400;
+        const extraScale = 1;
+        const now = performance.now();
+
+        for (let i = 0; i < sparkCount; i++) {
+            const angle = (2 * Math.PI * i) / sparkCount;
+            sparks.push({
+                x: e.clientX,
+                y: e.clientY,
+                angle,
+                startTime: now
+            });
+        }
+
+        if (!raf) {
+            raf = requestAnimationFrame(draw);
+        }
+    }
+
+    function draw(timestamp) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const sparkColor = getAccentColor();
+
+        sparks = sparks.filter(spark => {
+            const elapsed = timestamp - spark.startTime;
+            if (elapsed >= 400) return false;
+
+            const progress = elapsed / 400;
+            const eased = progress * (2 - progress);
+            const distance = eased * 15 * 1;
+            const lineLength = 10 * (1 - eased);
+
+            const x1 = spark.x + distance * Math.cos(spark.angle);
+            const y1 = spark.y + distance * Math.sin(spark.angle);
+            const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
+            const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
+
+            ctx.strokeStyle = sparkColor;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+
+            return true;
         });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-            card.style.willChange = '';
-        });
-    });
+
+        if (sparks.length > 0) {
+            raf = requestAnimationFrame(draw);
+        } else {
+            raf = null;
+        }
+    }
+
+    document.addEventListener('click', handleClick);
+
+    // Re-read accent on theme toggle
+    window.__sparkAccent = getAccentColor;
 }
 
 /* ═══════════════════════════════════════════════════════════
     HERO — stagger on load with blur reveal
-    ═══════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════ */
 function setupHeroEntrance() {
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -374,7 +375,6 @@ function setupHeroEntrance() {
    ═══════════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
     loadTheme();
-    setupCursor();
     setupScrollProgress();
     setupNav();
     setupMobileMenu();
@@ -382,10 +382,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setupScrollAnimations();
     setupBackToTop();
     setupContactForm();
-    setupCardTilt();
     setupHeroEntrance();
+    setupClickSpark();
 
     // Theme toggle button
     const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) themeToggle.addEventListener('click', cycleTheme);
+    if (themeToggle) themeToggle.addEventListener('click', () => {
+        cycleTheme();
+        if (window.__updateCursorTrail) window.__updateCursorTrail();
+    });
 });
