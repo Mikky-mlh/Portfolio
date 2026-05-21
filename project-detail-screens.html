@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="obsidian">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Yuvraj Sarathe</title>
+    <meta name="description" content="Project detail pages for Yuvraj Sarathe's production software portfolio.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <div class="grain" aria-hidden="true"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-back">← Portfolio</a>
+            <span class="nav-title">Projects</span>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeToggle" aria-label="Switch color theme" title="Switch theme">
+                    <span class="theme-dot"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <header class="project-hero">
+            <div class="project-hero-inner">
+                <div class="project-eyebrow" data-reveal="fade-up">
+                    <span class="project-status">
+                        <span class="status-dot" aria-label="Production"></span>
+                        Project deep-dives
+                    </span>
+                </div>
+
+                <h1 class="project-name" data-reveal="slide-up" data-delay="1">
+                    <span>Project</span>
+                    <span class="project-name-accent">Details</span>
+                </h1>
+
+                <p class="project-tagline" data-reveal="fade-up" data-delay="2">
+                    Five production systems I've built, shipped, and maintained — from open-source infrastructure to AI-powered tools.
+                </p>
+            </div>
+        </header>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <div class="launcher-intro" data-reveal="fade-up">
+                    <h1>All projects</h1>
+                    <p>Each page covers the problem, solution, tech stack, and key learnings. Click through to explore.</p>
+                </div>
+
+                <div class="project-gallery" data-reveal="fade-up" data-delay="1">
+                    <article class="gallery-card">
+                        <span class="gc-type">Open Source · Code Owner</span>
+                        <h2 class="gc-name">KDM-CLI</h2>
+                        <p class="gc-desc">Lightweight terminal-based monitoring tool for Kubernetes pods and Docker containers. Engineered automated CI/CD release workflows as Code Owner.</p>
+                        <div class="gc-tech">
+                            <span>Node.js</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                            <span>GitHub Actions</span>
+                        </div>
+                        <a href="kdm-cli.html" class="gc-link">View project →</a>
+                    </article>
+
+                    <article class="gallery-card">
+                        <span class="gc-type">AI-powered developer tool</span>
+                        <h2 class="gc-name">GitDeep</h2>
+                        <p class="gc-desc">Brutally honest AI assessments of any GitHub profile. Hirability scores, SWOT analysis, career slope detection — 12 AI providers, zero data storage.</p>
+                        <div class="gc-tech">
+                            <span>Next.js 15</span>
+                            <span>TypeScript</span>
+                            <span>Tailwind v4</span>
+                            <span>Recharts</span>
+                        </div>
+                        <a href="gitdeep.html" class="gc-link">View project →</a>
+                    </article>
+
+                    <article class="gallery-card">
+                        <span class="gc-type">Global Issue Explorer</span>
+                        <h2 class="gc-name">GitIssue</h2>
+                        <p class="gc-desc">Cross-repo GitHub issue search with label tracking, language filters, and customizable views — entirely client-side. Browse issues across all of GitHub.</p>
+                        <div class="gc-tech">
+                            <span>Next.js</span>
+                            <span>TypeScript</span>
+                            <span>Tailwind</span>
+                            <span>GitHub API</span>
+                        </div>
+                        <a href="gitissue.html" class="gc-link">View project →</a>
+                    </article>
+
+                    <article class="gallery-card">
+                        <span class="gc-type">AI-powered education tool</span>
+                        <h2 class="gc-name">CATMATHS</h2>
+                        <p class="gc-desc">Free web system for CAT quantitative section practice. Automated AI-generated testing templates with adaptive difficulty and instant feedback.</p>
+                        <div class="gc-tech">
+                            <span>Web Tech</span>
+                            <span>AI Integration</span>
+                        </div>
+                        <a href="catmaths.html" class="gc-link">View project →</a>
+                    </article>
+
+                    <article class="gallery-card">
+                        <span class="gc-type">Full-stack web application</span>
+                        <h2 class="gc-name">FlowForge</h2>
+                        <p class="gc-desc">Streamlined todo application with Firebase backend and Google Login authentication. Real-time sync, clean UI, and cross-device access.</p>
+                        <div class="gc-tech">
+                            <span>Firebase</span>
+                            <span>Google Auth</span>
+                            <span>JavaScript</span>
+                            <span>CSS</span>
+                        </div>
+                        <a href="flowforge.html" class="gc-link">View project →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <strong class="footer-name">Yuvraj Sarathe</strong>
+                <span class="footer-role">Production-First Developer · Bhopal, India</span>
+            </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="../index.html">Portfolio</a>
+                <a href="https://github.com/Yuvraj-Sarathe">GitHub</a>
+            </nav>
+            <span class="footer-copy mono">© 2025</span>
+        </div>
+    </footer>
+
+    <a href="#main" class="back-top" id="backTop" aria-label="Back to top" hidden>↑</a>
+
+    <script src="js/project.js"></script>
+</body>
+</html>
