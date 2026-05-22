@@ -161,7 +161,7 @@ body {
     overflow-x: hidden;
 }
 
-@media (hover: hover) and (pointer: fine) { body { cursor: none; } }
+body { cursor: none; }
 
 body::after {
     content: '';
@@ -252,9 +252,7 @@ code {
 }
 .skip-link:focus { top: 1rem; }
 
-@media (hover: hover) and (pointer: fine) {
-    a, button, .theme-btn, .back-top { cursor: none; }
-}
+a, button, .theme-btn, .back-top { cursor: none; }
 
 /* ═══════════════════════════════════════════════════════════
    GRAIN OVERLAY
