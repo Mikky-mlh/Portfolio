@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="obsidian">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motiveio — Project Detail</title>
+    <meta name="description" content="Motiveio: A curated learning platform and course aggregator. 50+ courses, 12 career roadmaps, step-by-step learning with Framer Motion animations.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <div class="grain" aria-hidden="true"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="../index.html#projects" class="nav-back">← All projects</a>
+            <span class="nav-title">Motiveio</span>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeToggle" aria-label="Switch color theme" title="Switch theme">
+                    <span class="theme-dot"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <header class="project-hero">
+            <div class="project-hero-inner">
+                <div class="project-eyebrow" data-reveal="fade-up">
+                    <span class="project-status">Live</span>
+                    <span class="project-year">2026</span>
+                    <span class="project-role-badge">Learning Platform</span>
+                </div>
+
+                <h1 class="project-name project-name--inline" data-reveal="slide-up" data-delay="1">
+                    Motive<span class="project-name-accent-inline">io</span>
+                </h1>
+
+                <p class="project-tagline" data-reveal="fade-up" data-delay="2">
+                    A curated learning platform and course aggregator — 50+ courses from 30+ platforms organized into 12 structured career roadmaps. Browse, discover, and follow clear learning paths without signing up.
+                </p>
+
+                <div class="project-hero-rule" data-reveal="expand" data-delay="3" aria-hidden="true"></div>
+
+                <div class="project-hero-links" data-reveal="fade-up" data-delay="4">
+                    <a href="https://motivio-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <span>Open live demo</span>
+                        <span class="btn-icon">↗</span>
+                    </a>
+                    <a href="https://github.com/Yuvraj-Sarathe/Motiveio" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <span>GitHub repository</span>
+                        <span class="btn-icon">↗</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <div class="section-header" data-reveal="fade-up">
+                    <span class="section-num" aria-hidden="true">01</span>
+                    <h2 class="section-heading">Problem & solution</h2>
+                </div>
+
+                <div class="ps-grid" data-reveal="fade-up" data-delay="1">
+                    <div class="ps-card">
+                        <span class="ps-label">
+                            <span class="ps-label-icon">!</span>
+                            Problem
+                        </span>
+                        <h3>Fragmented learning across platforms</h3>
+                        <p>Aspiring developers drown in scattered resources — courses on Coursera, tutorials on YouTube, articles on freeCodeCamp, documentation on MDN. There is no unified way to discover what to learn, in what order, and from which platform. Career roadmaps exist but are static documents that don't connect to actual courses. Students waste more time planning their learning than actually learning.</p>
+                    </div>
+                    <div class="ps-card">
+                        <span class="ps-label">
+                            <span class="ps-label-icon">→</span>
+                            Solution
+                        </span>
+                        <h3>Unified course aggregation with guided roadmaps</h3>
+                        <p>Motiveio (motivation + I/O) aggregates 50+ courses from 30+ platforms into 12 structured career roadmaps with 145+ steps and 226+ curated resources. Each roadmap is organized into phases with typed steps — lessons, projects, quizzes, and certifications. Built with Next.js 16, Supabase (13 tables with RLS), Tailwind CSS v4, and Framer Motion for spring-based animations. Server-first architecture with repository pattern data access and 4-layer auth defense. No account required for browsing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <div class="section-header" data-reveal="fade-up">
+                    <span class="section-num" aria-hidden="true">02</span>
+                    <h2 class="section-heading">Tech stack</h2>
+                </div>
+
+                <div class="tech-grid" data-reveal="fade-up" data-delay="1">
+                    <div class="tech-item">
+                        <div class="tech-name">Next.js 16</div>
+                        <div class="tech-role">Framework (App Router)</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-name">TypeScript 6</div>
+                        <div class="tech-role">Language</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-name">Tailwind CSS v4</div>
+                        <div class="tech-role">Styling</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-name">Framer Motion 12</div>
+                        <div class="tech-role">Animation</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-name">Supabase</div>
+                        <div class="tech-role">Database & Auth (13 tables)</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-name">Lucide React</div>
+                        <div class="tech-role">Icons</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-name">Zod 4</div>
+                        <div class="tech-role">Validation</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-name">Vercel</div>
+                        <div class="tech-role">Deployment</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <div class="section-header" data-reveal="fade-up">
+                    <span class="section-num" aria-hidden="true">03</span>
+                    <h2 class="section-heading">Key features</h2>
+                </div>
+
+                <div class="detail-content" data-reveal="fade-up" data-delay="1">
+                    <ul class="feature-list">
+                        <li>
+                            <span class="feature-marker" aria-hidden="true">✦</span>
+                            <span><strong>Course Catalog</strong> — 50+ courses from edX, Coursera, freeCodeCamp, Udemy, Scrimba and more, with filtering by level, price, tags, and roadmap association.</span>
+                        </li>
+                        <li>
+                            <span class="feature-marker" aria-hidden="true">✦</span>
+                            <span><strong>Career Roadmaps</strong> — 12 structured learning paths covering web development, DevOps, AI/ML, data science, cybersecurity, mobile, game dev, blockchain, and DSA.</span>
+                        </li>
+                        <li>
+                            <span class="feature-marker" aria-hidden="true">✦</span>
+                            <span><strong>Step-by-Step Learning</strong> — Course content broken into typed steps (lessons, projects, quizzes, resources) with embedded YouTube videos and practice questions.</span>
+                        </li>
+                        <li>
+                            <span class="feature-marker" aria-hidden="true">✦</span>
+                            <span><strong>No-Signup Browsing</strong> — All public content — courses, roadmaps, blogs, reviews — accessible without authentication.</span>
+                        </li>
+                        <li>
+                            <span class="feature-marker" aria-hidden="true">✦</span>
+                            <span><strong>Admin Panel</strong> — Full CRUD for courses, steps, questions, resources, blogs, and reviews with moderation workflows and analytics dashboard.</span>
+                        </li>
+                        <li>
+                            <span class="feature-marker" aria-hidden="true">✦</span>
+                            <span><strong>Community Content</strong> — User-submitted blog posts and reviews with a moderation approval flow.</span>
+                        </li>
+                        <li>
+                            <span class="feature-marker" aria-hidden="true">✦</span>
+                            <span><strong>Framer Motion Animations</strong> — Spring-based hover effects, staggered reveals, and page transitions with zero layout shift.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <div class="section-header" data-reveal="fade-up">
+                    <span class="section-num" aria-hidden="true">04</span>
+                    <h2 class="section-heading">Architecture</h2>
+                </div>
+
+                <div class="detail-content" data-reveal="fade-up" data-delay="1">
+                    <p>Motiveio follows a <strong>server-first component model</strong> with Next.js App Router. Client Components receive data as props and never fetch. The data layer uses a <strong>repository pattern</strong> (<code>lib/data/*-repo.ts</code>) that abstracts Supabase queries behind typed interfaces.</p>
+                    <p>The database has <strong>13 tables with Row-Level Security</strong> including courses, profiles, progress tracking, roadmaps, steps, resources, practice questions, tags, blogs, and reviews. Authentication uses a <strong>4-layer defense</strong> — middleware, layout guard, action guard, and RLS — with three Supabase clients (Server anon, Browser anon, Admin service_role).</p>
+                    <p>The type system spans three layers: DB row types, domain normalizers, and application types. With <strong>226+ curated external URLs</strong> pointing to documentation, YouTube playlists, certification programs, and course platforms, the seed data alone represents weeks of manual curation across 30+ platforms.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <div class="section-header" data-reveal="fade-up">
+                    <span class="section-num" aria-hidden="true">05</span>
+                    <h2 class="section-heading">Links & resources</h2>
+                </div>
+
+                <div class="links-row" data-reveal="fade-up" data-delay="1">
+                    <a href="https://motivio-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <span>Open live demo</span>
+                        <span class="btn-icon">↗</span>
+                    </a>
+                    <a href="https://github.com/Yuvraj-Sarathe/Motiveio" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <span>GitHub repository</span>
+                        <span class="btn-icon">↗</span>
+                    </a>
+                    <a href="../index.html#projects" class="btn btn-text">
+                        <span class="btn-icon">←</span>
+                        <span>Back to projects</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <strong class="footer-name">Yuvraj Sarathe</strong>
+                <span class="footer-role">Production-First Developer · Bhopal, India</span>
+            </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="../index.html#projects">All projects</a>
+                <a href="../index.html">Portfolio</a>
+            </nav>
+            <span class="footer-copy mono">© 2026</span>
+        </div>
+    </footer>
+
+    <a href="#main" class="back-top" id="backTop" aria-label="Back to top" hidden>↑</a>
+
+    <script src="js/project.js"></script>
+    <script src="../cursor-trail.js"></script>
+</body>
+</html>

@@ -555,7 +555,9 @@ a, button, .theme-btn, .back-top { cursor: none; }
     user-select: none;
 }
 .project-name-accent { color: var(--accent); display: block; }
-[data-theme="manuscript"] .project-name-accent { font-style: italic; }
+.project-name-accent-inline { color: var(--accent); display: inline; }
+[data-theme="manuscript"] .project-name-accent,
+[data-theme="manuscript"] .project-name-accent-inline { font-style: italic; }
 
 .project-tagline {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
